@@ -1,4 +1,5 @@
 #Good chat-GPT code
+#test comment
 extends Node2D
 
 # Speed of movement in pixels per second
