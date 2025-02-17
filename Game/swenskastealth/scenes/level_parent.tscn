@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://chvglrmu6cmld"]
+
+[ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://player.tscn" id="2_7md7q"]
+[ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_vhq0g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awiub"]
+radius = 152.398
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_7md7q")]
+z_index = 2
+
+[node name="ForestBackground" type="Sprite2D" parent="."]
+position = Vector2(-1824, -358)
+texture = ExtResource("2_vhq0g")
+
+[node name="objects" type="StaticBody2D" parent="."]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects"]
+z_index = 2
+position = Vector2(291, 812)
+shape = SubResource("CircleShape2D_awiub")
