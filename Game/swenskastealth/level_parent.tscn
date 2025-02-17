@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdlm5ipp5j3ts"]
-
-[ext_resource type="Texture2D" uid="uid://is4o3ksj44r" path="res://icon.svg" id="1_rrqen"]
-[ext_resource type="Script" path="res://IconMovement.gd" id="2_4diua"]
+[gd_scene format=3 uid="uid://bdlm5ipp5j3ts"]
 
 [node name="Level Parent" type="Node2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(523.2, 292)
-texture = ExtResource("1_rrqen")
-script = ExtResource("2_4diua")
