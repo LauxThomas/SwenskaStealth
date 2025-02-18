@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cblvu4uo81osa"
-path="res://.godot/imported/RACCOONSPRITESHEET.png-0c3744b2fd8525d51e9c9e3f89ccfd85.ctex"
+uid="uid://clk5dtb7lyiq5"
+path="res://.godot/imported/mentor.png-6a10afe4f756f2e0f036ea60d5f4ed11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/RACCOONSPRITESHEET.png"
-dest_files=["res://.godot/imported/RACCOONSPRITESHEET.png-0c3744b2fd8525d51e9c9e3f89ccfd85.ctex"]
+source_file="res://assets/mentor.png"
+dest_files=["res://.godot/imported/mentor.png-6a10afe4f756f2e0f036ea60d5f4ed11.ctex"]
 
 [params]
 
