@@ -130,9 +130,12 @@ shape = SubResource("CircleShape2D_awiub")
 position = Vector2(230.125, 259.875)
 scale = Vector2(3.0463, 2.87963)
 
-[node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialogue_ui")]
+[node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialogue_ui", "mentor", "animated_sprite", "player")]
 script = ExtResource("3_kblfe")
 dialogue_ui = NodePath("../../Dialog")
+mentor = NodePath(".")
+animated_sprite = NodePath("AnimatedSprite2D")
+player = NodePath("../../Raccoon")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mentor/MentorArea2D"]
 scale = Vector2(1, 1)
