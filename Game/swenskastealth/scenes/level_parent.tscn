@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://chvglrmu6cmld"]
+[gd_scene load_steps=11 format=3 uid="uid://chvglrmu6cmld"]
 
 [ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://player.tscn" id="2_7md7q"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_vhq0g"]
+[ext_resource type="Script" path="res://scenes/mentor_area_2d.gd" id="3_kblfe"]
 [ext_resource type="Texture2D" uid="uid://bxlbr2myw2ck6" path="res://assets/mentor/down.png" id="3_pr1jw"]
 [ext_resource type="Texture2D" uid="uid://sdn8xnywabsm" path="res://assets/mentor/left.png" id="4_1ei4o"]
 [ext_resource type="Texture2D" uid="uid://bxyctfdqof5e1" path="res://assets/mentor/right.png" id="5_p7eh1"]
@@ -54,12 +55,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxp68"]
-size = Vector2(35.2549, 36.6949)
+size = Vector2(57.4467, 64.5339)
 
 [node name="Forest" type="Node2D"]
 
 [node name="Dialog" type="CanvasLayer" parent="."]
-visible = false
 follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="Dialog"]
@@ -130,12 +130,15 @@ shape = SubResource("CircleShape2D_awiub")
 position = Vector2(230.125, 259.875)
 scale = Vector2(3.0463, 2.87963)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mentor"]
+[node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialogue_ui")]
+script = ExtResource("3_kblfe")
+dialogue_ui = NodePath("../../Dialog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mentor/MentorArea2D"]
+scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_qw2uh")
 
-[node name="MentorArea2D" type="Area2D" parent="Mentor"]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mentor/MentorArea2D"]
-position = Vector2(0.94377, 1.77974)
+position = Vector2(1.27203, 0.390677)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xxp68")

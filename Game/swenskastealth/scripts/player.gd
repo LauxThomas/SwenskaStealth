@@ -4,7 +4,7 @@ extends Node2D  # Attach to Node2D
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
 
-@onready var sprite = $Sprite2D  # Ensure this matches the child name
+@onready var sprite = $Area2D/Sprite2D # Ensure this matches the child name
 
 func _ready():
 	if not sprite:
