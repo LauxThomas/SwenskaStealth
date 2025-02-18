@@ -53,7 +53,7 @@ animations = [{
 script = ExtResource("1_60r62")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 drag_left_margin = 0.86
 drag_top_margin = 0.88
