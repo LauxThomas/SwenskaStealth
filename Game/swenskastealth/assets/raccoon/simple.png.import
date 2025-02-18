@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxu6kyv1yacgu"
-path="res://.godot/imported/raccoon-up-4.png-85dc743ae2ac717c6acdad9319f85fc8.ctex"
+uid="uid://8llc1ga7jctf"
+path="res://.godot/imported/simple.png-bce442ded3daee8b1df8864022c63ea7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raccoon/up/raccoon-up-4.png"
-dest_files=["res://.godot/imported/raccoon-up-4.png-85dc743ae2ac717c6acdad9319f85fc8.ctex"]
+source_file="res://assets/raccoon/simple.png"
+dest_files=["res://.godot/imported/simple.png-bce442ded3daee8b1df8864022c63ea7.ctex"]
 
 [params]
 
