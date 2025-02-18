@@ -6,19 +6,22 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_awiub"]
 radius = 152.398
 
-[node name="Game" type="Node2D"]
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("2_7md7q")]
+[node name="Forest" type="Node2D" parent="."]
+
+[node name="Raccoon" parent="Forest" instance=ExtResource("2_7md7q")]
 z_index = 2
 
-[node name="ForestBackground" type="Sprite2D" parent="."]
+[node name="ForestBackground" type="Sprite2D" parent="Forest"]
 position = Vector2(-1824, -358)
 texture = ExtResource("2_vhq0g")
 
-[node name="objects" type="StaticBody2D" parent="."]
+[node name="objects" type="StaticBody2D" parent="Forest"]
 z_index = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="objects"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Forest/objects"]
 z_index = 2
 position = Vector2(291, 812)
 shape = SubResource("CircleShape2D_awiub")
