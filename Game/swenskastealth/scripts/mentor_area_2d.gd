@@ -7,7 +7,7 @@ extends Area2D
 @export var player = CharacterBody2D  # Store reference to the player
 
 func _ready():
-	_clear_controls()
+	talk_icon.visible = false
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
 	talk_icon.connect("gui_input", _on_talk_icon_clicked)
@@ -44,7 +44,6 @@ func _update_animation(direction: Vector2):
 func _on_talk_icon_clicked(event):
 	if event is InputEventMouseButton and event.pressed:
 		_move_towards_player()
-		dialogue_ui.visible = true  # Show dialogue when clicking the talk icon
 
 func _clear_controls():
 	dialogue_ui.visible = false
