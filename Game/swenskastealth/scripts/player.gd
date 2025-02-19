@@ -1,6 +1,7 @@
 extends Node2D  # Attach to Node2D
 
 @export var speed: float = 200.0
+@export var talk_button: TextureButton  # Talk to mentor icon
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
 
@@ -20,9 +21,10 @@ func _process(delta):
 		stop_animation()
 
 func _input(event):
-	#print ("input")
-	#print(talking_to_mentor)
 	if event is InputEventMouseButton and event.pressed:
+		if talk_button and talk_button.get_global_rect().has_point(get_global_mouse_position()):
+			print("Clicked talk button - ignoring movement")  # Debug message
+			return  # Exit function, preventing movement
 		target_position = get_global_mouse_position()
 		moving_horizontally = true  # Reset movement priority
 	

@@ -152,8 +152,9 @@ offset_bottom = 25.3714
 action_mode = 0
 texture_normal = ExtResource("8_v4odj")
 
-[node name="Raccoon" parent="." instance=ExtResource("2_7md7q")]
+[node name="Raccoon" parent="." node_paths=PackedStringArray("talk_button") instance=ExtResource("2_7md7q")]
 z_index = 2
+talk_button = NodePath("../Mentor/MentorArea2D/Control/TalkButton")
 
 [node name="objects" type="StaticBody2D" parent="."]
 z_index = 2
