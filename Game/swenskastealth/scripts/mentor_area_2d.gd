@@ -13,12 +13,10 @@ func _ready():
 	talk_icon.connect("gui_input", _on_talk_icon_clicked)
 
 func _on_body_entered(body):
-	print("Entered:", body.name)  # Debugging message
 	if body.is_in_group("player"):
 		talk_icon.visible = true
 
 func _on_body_exited(body):
-	print("Exited:", body.name)  # Debugging message
 	if body.is_in_group("player"):
 		_clear_controls()
 
@@ -33,9 +31,9 @@ func _update_animation(direction: Vector2):
 	else:
 		# Moving up or down
 		if direction.y > 0:
-			animated_sprite.play("up")  # Down animation
+			animated_sprite.play("down")  # Down animation
 		else:
-			animated_sprite.play("down")  # Up animation
+			animated_sprite.play("up")  # Up animation
 
 func _on_talk_icon_clicked(event):
 	if event is InputEventMouseButton and event.pressed:
