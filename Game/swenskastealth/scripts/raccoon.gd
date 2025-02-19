@@ -19,10 +19,12 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-			return  # Exit function, preventing movement
-		target_position = get_global_mouse_position()
-		moving_horizontally = true  # Reset movement priority
-	
+		if talking:
+			print ("talking, avoiding movement")
+		else:
+			target_position = get_global_mouse_position()
+			moving_horizontally = true  # Reset movement priority
+
 func get_four_direction_vector(delta_pos: Vector2) -> Vector2:
 	if moving_horizontally:
 		if abs(delta_pos.x) > 2:  # If horizontal movement needed
