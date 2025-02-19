@@ -6,6 +6,7 @@ extends Area2D
 @export var animated_sprite: AnimatedSprite2D  # The AnimatedSprite2D for the mentor
 @export var player = CharacterBody2D  # Store reference to the player
 
+
 func _ready():
 	talk_icon.visible = false
 	connect("body_entered", _on_body_entered)

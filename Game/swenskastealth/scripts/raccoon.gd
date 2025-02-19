@@ -8,8 +8,8 @@ var moving_horizontally = true  # Control horizontal/vertical priority
 @onready var sprite = $CharacterBody2D/Sprite2D # Ensure this matches the child name
 
 func _ready():
-	if not sprite:
-		print("Error: AnimatedSprite2D not found!")
+	if not sprite or not talk_button:
+		print("Error: Instance variables not defined in Inspector!")
 	target_position = global_position
 
 func _process(delta):
@@ -22,7 +22,7 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		if talk_button and talk_button.visible and talk_button.get_global_rect().has_point(get_global_mouse_position()):
+		if talk_button.visible and talk_button.get_global_rect().has_point(get_global_mouse_position()):
 			#print("Clicked talk button - ignoring movement")  # Debug message
 			return  # Exit function, preventing movement
 		target_position = get_global_mouse_position()
