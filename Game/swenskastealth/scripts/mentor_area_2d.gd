@@ -15,7 +15,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if dialogue_ui and dialogue_ui.visible and not dialogue_ui.get_global_rect().has_point(get_global_mouse_position()):
-			print("Clicked outside dialogue - closing if open")  # Debug message
+			#print("Clicked outside dialogue - closing if open")  # Debug message
 			dialogue_ui.visible = false
 
 func _on_body_entered(body):
