@@ -139,11 +139,10 @@ text = "Hej, you’re finally awake.  Välkommen till Sverige."
 position = Vector2(230.125, 259.875)
 scale = Vector2(3.0463, 2.87963)
 
-[node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialog_box", "talk_icon", "mentor", "animated_sprite", "player")]
+[node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialog_box", "talk_button", "animated_sprite", "player")]
 script = ExtResource("3_kblfe")
 dialog_box = NodePath("../../Dialog/Control/Box")
-talk_icon = NodePath("Control/TalkButton")
-mentor = NodePath(".")
+talk_button = NodePath("Control/TalkButton")
 animated_sprite = NodePath("AnimatedSprite2D")
 player = NodePath("../../Raccoon/CharacterBody2D")
 
