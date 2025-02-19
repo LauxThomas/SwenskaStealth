@@ -1,5 +1,5 @@
 extends Node2D  # Attach to Node2D
-
+signal player_position_updated
 @export var speed: float = 200.0
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
@@ -19,7 +19,7 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if talking:
-			print ("talking, avoiding movement")
+			return
 		else:
 			target_position = get_global_mouse_position()
 			moving_horizontally = true  # Reset movement priority
@@ -58,6 +58,8 @@ func _move_on_click(delta, target):
 		var direction = get_four_direction_vector(target - global_position)
 		global_position += direction * speed * delta  # Move only in one direction
 		update_animation(direction)
+		#print(global_position)
+		emit_signal("player_position_updated", global_position)
 	else:
 		stop_animation()
 

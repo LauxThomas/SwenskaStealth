@@ -16,5 +16,5 @@ func _input(event):
 			hide()
 
 func _on_talk_button_pressed():
-	print("talk button pressed")
+	#print("talk button pressed")
 	show()

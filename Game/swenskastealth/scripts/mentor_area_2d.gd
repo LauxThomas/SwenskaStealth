@@ -3,7 +3,7 @@ extends Area2D
 @export var dialog_box: Panel  # Assign this in the Inspector
 @export var talk_button: TextureButton # Drag the "talk" icon (TextureRect)
 @export var animated_sprite: AnimatedSprite2D  # The AnimatedSprite2D for the mentor
-@export var player = CharacterBody2D  # Store reference to the player
+var player_position: Vector2
 
 func _ready():
 	talk_button.visible = false
@@ -36,6 +36,7 @@ func _update_animation(direction: Vector2):
 
 func _on_talk_button_clicked(event):
 	if event is InputEventMouseButton and event.pressed:
+		#print("talk button event on mentor")
 		_move_towards_player()
 
 func _clear_controls():
@@ -43,9 +44,11 @@ func _clear_controls():
 	talk_button.visible = false
 
 func _move_towards_player():
-	if player:
-		var direction = player.global_position - global_position
-		if direction.length() > 0:
-			# Normalize direction to prevent fast diagonal movement
-			direction = direction.normalized()
-			_update_animation(direction)
+	var direction = player_position - global_position
+	if direction.length() > 0:
+		# Normalize direction to prevent fast diagonal movement
+		direction = direction.normalized()
+		_update_animation(direction)
+
+func _on_raccoon_player_position_updated(position):
+	player_position =  position
