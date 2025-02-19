@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var dialogue_ui: Node  # Assign this in the Inspector
+@export var dialogue_ui: Panel  # Assign this in the Inspector
 @export var talk_icon: TextureButton # Drag the "talk" icon (TextureRect)
 @export var mentor: Area2D
 @export var animated_sprite: AnimatedSprite2D  # The AnimatedSprite2D for the mentor
@@ -11,6 +11,12 @@ func _ready():
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
 	talk_icon.connect("gui_input", _on_talk_icon_clicked)
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if dialogue_ui and dialogue_ui.visible and not dialogue_ui.get_global_rect().has_point(get_global_mouse_position()):
+			print("Clicked outside dialogue - closing if open")  # Debug message
+			dialogue_ui.visible = false
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):

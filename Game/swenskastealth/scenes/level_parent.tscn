@@ -122,7 +122,7 @@ scale = Vector2(3.0463, 2.87963)
 
 [node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialogue_ui", "talk_icon", "mentor", "animated_sprite", "player")]
 script = ExtResource("3_kblfe")
-dialogue_ui = NodePath("../../Dialog")
+dialogue_ui = NodePath("../../Dialog/Control/Box")
 talk_icon = NodePath("Control/TalkButton")
 mentor = NodePath(".")
 animated_sprite = NodePath("AnimatedSprite2D")
