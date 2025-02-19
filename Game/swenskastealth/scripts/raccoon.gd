@@ -1,7 +1,6 @@
 extends Node2D  # Attach to Node2D
 
 @export var speed: float = 200.0
-@export var talk_button: TextureButton  # Talk to mentor icon
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
 var talking = false # Indicates if character is talking or not
@@ -9,7 +8,7 @@ var talking = false # Indicates if character is talking or not
 @onready var sprite = $CharacterBody2D/Sprite2D # Ensure this matches the child name
 
 func _ready():
-	if not sprite or not talk_button:
+	if not sprite:
 		print("Error: Instance variables not defined in Inspector!")
 		return
 	target_position = global_position
