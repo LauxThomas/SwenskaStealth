@@ -5,18 +5,11 @@ extends Area2D
 @export var animated_sprite: AnimatedSprite2D  # The AnimatedSprite2D for the mentor
 @export var player = CharacterBody2D  # Store reference to the player
 
-
 func _ready():
 	talk_button.visible = false
 	connect("body_entered", _on_body_entered)
 	connect("body_exited", _on_body_exited)
 	talk_button.connect("gui_input", _on_talk_button_clicked)
-
-func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		if dialog_box and dialog_box.visible and not dialog_box.get_global_rect().has_point(get_global_mouse_position()):
-			#print("Clicked outside dialogue - closing if open")  # Debug message
-			dialog_box.visible = false
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):

@@ -4,26 +4,21 @@ extends Node2D  # Attach to Node2D
 @export var talk_button: TextureButton  # Talk to mentor icon
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
+var talking = false # Indicates if character is talking or not
 
 @onready var sprite = $CharacterBody2D/Sprite2D # Ensure this matches the child name
 
 func _ready():
 	if not sprite or not talk_button:
 		print("Error: Instance variables not defined in Inspector!")
+		return
 	target_position = global_position
 
 func _process(delta):
-	if global_position.distance_to(target_position) > 2:
-		var direction = get_four_direction_vector(target_position - global_position)
-		global_position += direction * speed * delta  # Move only in one direction
-		update_animation(direction)
-	else:
-		stop_animation()
+	_move_on_click(delta, target_position)
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		if talk_button.visible and talk_button.get_global_rect().has_point(get_global_mouse_position()):
-			#print("Clicked talk button - ignoring movement")  # Debug message
 			return  # Exit function, preventing movement
 		target_position = get_global_mouse_position()
 		moving_horizontally = true  # Reset movement priority
@@ -56,3 +51,19 @@ func update_animation(direction: Vector2):
 func stop_animation():
 	if sprite:
 		sprite.stop()
+
+func _move_on_click(delta, target):
+	if global_position.distance_to(target) > 2 and not talking:
+		var direction = get_four_direction_vector(target - global_position)
+		global_position += direction * speed * delta  # Move only in one direction
+		update_animation(direction)
+	else:
+		stop_animation()
+
+func _on_talk_button_pressed():
+	stop_animation()
+	talking = true
+
+func _on_box_click_outside():
+	talking = false
+	#_move_on_click(delta, target_position)
