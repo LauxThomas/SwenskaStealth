@@ -4,7 +4,7 @@ extends Node2D  # Attach to Node2D
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
 
-@onready var sprite = $Area2D/Sprite2D # Ensure this matches the child name
+@onready var sprite = $CharacterBody2D/Sprite2D # Ensure this matches the child name
 
 func _ready():
 	if not sprite:
@@ -20,10 +20,12 @@ func _process(delta):
 		stop_animation()
 
 func _input(event):
+	#print ("input")
+	#print(talking_to_mentor)
 	if event is InputEventMouseButton and event.pressed:
 		target_position = get_global_mouse_position()
 		moving_horizontally = true  # Reset movement priority
-
+	
 func get_four_direction_vector(delta_pos: Vector2) -> Vector2:
 	if moving_horizontally:
 		if abs(delta_pos.x) > 2:  # If horizontal movement needed

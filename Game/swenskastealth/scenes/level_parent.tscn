@@ -1,15 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://chvglrmu6cmld"]
+[gd_scene load_steps=12 format=3 uid="uid://chvglrmu6cmld"]
 
-[ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://player.tscn" id="2_7md7q"]
+[ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="2_7md7q"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_vhq0g"]
-[ext_resource type="Script" path="res://scenes/mentor_area_2d.gd" id="3_kblfe"]
+[ext_resource type="Script" path="res://scripts/mentor_area_2d.gd" id="3_kblfe"]
 [ext_resource type="Texture2D" uid="uid://bxlbr2myw2ck6" path="res://assets/mentor/down.png" id="3_pr1jw"]
 [ext_resource type="Texture2D" uid="uid://sdn8xnywabsm" path="res://assets/mentor/left.png" id="4_1ei4o"]
 [ext_resource type="Texture2D" uid="uid://bxyctfdqof5e1" path="res://assets/mentor/right.png" id="5_p7eh1"]
 [ext_resource type="Texture2D" uid="uid://w64nikbw6gyk" path="res://assets/mentor/up.png" id="6_3upmw"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_awiub"]
-radius = 152.398
+[ext_resource type="Texture2D" uid="uid://bwwh74j5hj42o" path="res://assets/talk-button.png" id="8_v4odj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qw2uh"]
 animations = [{
@@ -55,9 +53,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxp68"]
-size = Vector2(57.4467, 64.5339)
+size = Vector2(67.0485, 41.8312)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awiub"]
+radius = 152.398
 
 [node name="Forest" type="Node2D"]
+
+[node name="ForestBackground" type="Sprite2D" parent="."]
+position = Vector2(-1880, -117)
+texture = ExtResource("2_vhq0g")
 
 [node name="Dialog" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -73,7 +78,7 @@ offset_left = -1093.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="Dialog/Control"]
+[node name="Box" type="Panel" parent="Dialog/Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -87,7 +92,7 @@ offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="Dialog/Control/Panel"]
+[node name="Button" type="Button" parent="Dialog/Control/Box"]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 3
@@ -100,22 +105,55 @@ offset_top = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
+action_mode = 0
 button_mask = 0
 text = "Continue"
 
-[node name="Label" type="Label" parent="Dialog/Control/Panel"]
+[node name="Text" type="Label" parent="Dialog/Control/Box"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 30
 text = "Hej, you’re finally awake.  Välkommen till Sverige."
 
+[node name="Mentor" type="Node2D" parent="."]
+position = Vector2(230.125, 259.875)
+scale = Vector2(3.0463, 2.87963)
+
+[node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialogue_ui", "talk_icon", "mentor", "animated_sprite", "player")]
+script = ExtResource("3_kblfe")
+dialogue_ui = NodePath("../../Dialog")
+talk_icon = NodePath("Control/TalkButton")
+mentor = NodePath(".")
+animated_sprite = NodePath("AnimatedSprite2D")
+player = NodePath("../../Raccoon/CharacterBody2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mentor/MentorArea2D"]
+sprite_frames = SubResource("SpriteFrames_qw2uh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mentor/MentorArea2D"]
+position = Vector2(0.94377, 11.8505)
+shape = SubResource("RectangleShape2D_xxp68")
+
+[node name="Control" type="Control" parent="Mentor/MentorArea2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -39.0
+offset_right = 22.0
+offset_bottom = -16.0
+
+[node name="TalkButton" type="TextureButton" parent="Mentor/MentorArea2D/Control"]
+layout_mode = 0
+offset_left = 10.7979
+offset_top = -2.62861
+offset_right = 36.7979
+offset_bottom = 25.3714
+action_mode = 0
+texture_normal = ExtResource("8_v4odj")
+
 [node name="Raccoon" parent="." instance=ExtResource("2_7md7q")]
 z_index = 2
-
-[node name="ForestBackground" type="Sprite2D" parent="."]
-position = Vector2(-1880, -117)
-texture = ExtResource("2_vhq0g")
 
 [node name="objects" type="StaticBody2D" parent="."]
 z_index = 2
@@ -126,22 +164,4 @@ z_index = 2
 position = Vector2(291, 812)
 shape = SubResource("CircleShape2D_awiub")
 
-[node name="Mentor" type="Node2D" parent="."]
-position = Vector2(230.125, 259.875)
-scale = Vector2(3.0463, 2.87963)
-
-[node name="MentorArea2D" type="Area2D" parent="Mentor" node_paths=PackedStringArray("dialogue_ui", "mentor", "animated_sprite", "player")]
-script = ExtResource("3_kblfe")
-dialogue_ui = NodePath("../../Dialog")
-mentor = NodePath(".")
-animated_sprite = NodePath("AnimatedSprite2D")
-player = NodePath("../../Raccoon")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mentor/MentorArea2D"]
-scale = Vector2(1, 1)
-sprite_frames = SubResource("SpriteFrames_qw2uh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mentor/MentorArea2D"]
-position = Vector2(1.27203, 0.390677)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_xxp68")
+[editable path="Raccoon"]
