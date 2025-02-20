@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var speed: float = 200.0
-signal player_position_updated
+signal player_position_updated # Notifies other notes interested on player position
 
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
@@ -62,9 +62,8 @@ func stop_animation():
 	if sprite:
 		sprite.stop()
 
-func _on_box_click_outside():
-	talking = false
-	#_move_on_click(delta, target_position)
-
 func _on_mentor_character_talking():
 	talking = true # Replace with function body.
+
+func _on_dialog_box_ignored() -> void:
+	talking = false
