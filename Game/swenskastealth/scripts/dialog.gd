@@ -2,11 +2,14 @@ extends CanvasLayer
 
 signal box_ignored #Notifies other nodes if dialog box was ignored
 @onready var dialog_box =  $Control/Box
+@onready var dialog_box_message = $Control/Box/Text
+@onready var dialog_box_button =  $Control/Box/Button
 var mouse_position: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dialog_box.hide()
+	dialog_box_button.connect("gui_input", _on_button_interaction)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
@@ -20,3 +23,11 @@ func _input(event):
 
 func _on_mentor_character_talking():
 	dialog_box.show()
+
+func _on_button_interaction(event):
+	if event is InputEventMouseMotion:
+		print("reaching button")
+	else: 
+		if event is InputEventMouseButton:
+			print("click on button")
+			dialog_box_message.text = "algo nuevo"
