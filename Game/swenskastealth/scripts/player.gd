@@ -1,16 +1,15 @@
-extends Node2D  # Attach to Node2D
-signal player_position_updated
+extends Node2D
+
 @export var speed: float = 200.0
+signal player_position_updated
+
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
-var talking = false # Indicates if character is talking or not
+var talking = false # Indicates if player is talking or not
 
-@onready var sprite = $CharacterBody2D/Sprite2D # Ensure this matches the child name
+@onready var sprite = $CharacterBody2D/Sprite2D
 
 func _ready():
-	if not sprite:
-		print("Error: Instance variables not defined in Inspector!")
-		return
 	target_position = global_position
 
 func _process(delta):
@@ -23,6 +22,16 @@ func _input(event):
 		else:
 			target_position = get_global_mouse_position()
 			moving_horizontally = true  # Reset movement priority
+
+func _move_on_click(delta, target):
+	if global_position.distance_to(target) > 2 and not talking:
+		var direction = get_four_direction_vector(target - global_position)
+		global_position += direction * speed * delta  # Move only in one direction
+		update_animation(direction)
+		#print(global_position)
+		emit_signal("player_position_updated", global_position)
+	else:
+		stop_animation()
 
 func get_four_direction_vector(delta_pos: Vector2) -> Vector2:
 	if moving_horizontally:
@@ -53,20 +62,9 @@ func stop_animation():
 	if sprite:
 		sprite.stop()
 
-func _move_on_click(delta, target):
-	if global_position.distance_to(target) > 2 and not talking:
-		var direction = get_four_direction_vector(target - global_position)
-		global_position += direction * speed * delta  # Move only in one direction
-		update_animation(direction)
-		#print(global_position)
-		emit_signal("player_position_updated", global_position)
-	else:
-		stop_animation()
-
-func _on_talk_button_pressed():
-	stop_animation()
-	talking = true
-
 func _on_box_click_outside():
 	talking = false
 	#_move_on_click(delta, target_position)
+
+func _on_mentor_character_talking():
+	talking = true # Replace with function body.

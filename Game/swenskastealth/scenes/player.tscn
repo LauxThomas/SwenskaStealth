@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b866ddyv2cnxm"]
 
-[ext_resource type="Script" path="res://scripts/raccoon.gd" id="1_60r62"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_60r62"]
 [ext_resource type="Texture2D" uid="uid://c3k5w3ulrxxok" path="res://assets/raccoon/down.png" id="2_yd6y3"]
 [ext_resource type="Texture2D" uid="uid://ccj23lx801k2a" path="res://assets/raccoon/left.png" id="3_gteec"]
 [ext_resource type="Texture2D" uid="uid://i3wtggsjdwhi" path="res://assets/raccoon/right.png" id="4_pexii"]

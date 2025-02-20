@@ -15,6 +15,5 @@ func _input(event):
 			emit_signal("click_outside")
 			hide()
 
-func _on_talk_button_pressed():
-	#print("talk button pressed")
+func _on_mentor_character_talking():
 	show()
