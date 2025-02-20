@@ -1,33 +1,38 @@
-extends Node2D  # Attach to Node2D
+extends Node2D
 
 @export var speed: float = 200.0
-@export var talk_button: TextureButton  # Talk to mentor icon
+signal player_position_updated # Notifies other nodes interested on player position
+
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
+var talking = false # Indicates if player is talking or not
 
-@onready var sprite = $CharacterBody2D/Sprite2D # Ensure this matches the child name
+@onready var sprite = $CharacterBody2D/Sprite2D
 
 func _ready():
-	if not sprite:
-		print("Error: AnimatedSprite2D not found!")
-	target_position = global_position
+	_stop_movement()
 
 func _process(delta):
-	if global_position.distance_to(target_position) > 2:
-		var direction = get_four_direction_vector(target_position - global_position)
-		global_position += direction * speed * delta  # Move only in one direction
-		update_animation(direction)
-	else:
-		stop_animation()
+	_move_to_click_position(delta, target_position)
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		if talk_button and talk_button.visible and talk_button.get_global_rect().has_point(get_global_mouse_position()):
-			#print("Clicked talk button - ignoring movement")  # Debug message
-			return  # Exit function, preventing movement
-		target_position = get_global_mouse_position()
-		moving_horizontally = true  # Reset movement priority
-	
+		if talking:
+			return
+		else:
+			target_position = get_global_mouse_position()
+			moving_horizontally = true  # Reset movement priority
+
+func _move_to_click_position(delta, target):
+	if global_position.distance_to(target) > 2 and not talking:
+		var direction = get_four_direction_vector(target - global_position)
+		global_position += direction * speed * delta  # Move only in one direction
+		update_animation(direction)
+		#print(global_position)
+		emit_signal("player_position_updated", global_position)
+	else:
+		stop_animation()
+
 func get_four_direction_vector(delta_pos: Vector2) -> Vector2:
 	if moving_horizontally:
 		if abs(delta_pos.x) > 2:  # If horizontal movement needed
@@ -56,3 +61,13 @@ func update_animation(direction: Vector2):
 func stop_animation():
 	if sprite:
 		sprite.stop()
+
+func _stop_movement():
+	target_position = global_position
+
+func _on_mentor_character_talking():
+	talking = true # Replace with function body.
+
+func _on_dialog_box_ignored():
+	talking = false
+	_stop_movement()

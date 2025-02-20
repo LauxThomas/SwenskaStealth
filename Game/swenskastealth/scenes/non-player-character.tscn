@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc3g5ueltykrq"]
+
+[ext_resource type="Texture2D" uid="uid://bxlbr2myw2ck6" path="res://assets/mentor/down.png" id="2_ccqxr"]
+[ext_resource type="Texture2D" uid="uid://sdn8xnywabsm" path="res://assets/mentor/left.png" id="3_qtqps"]
+[ext_resource type="Texture2D" uid="uid://bxyctfdqof5e1" path="res://assets/mentor/right.png" id="4_kr4m4"]
+[ext_resource type="Texture2D" uid="uid://w64nikbw6gyk" path="res://assets/mentor/up.png" id="5_f7tpj"]
+[ext_resource type="Texture2D" uid="uid://bwwh74j5hj42o" path="res://assets/talk-button.png" id="6_hnexr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qw2uh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ccqxr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ccqxr")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qtqps")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kr4m4")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f7tpj")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxp68"]
+size = Vector2(67.0485, 41.8312)
+
+[node name="Non-Player-Character" type="Node2D"]
+position = Vector2(230.125, 259.875)
+scale = Vector2(3.0463, 2.87963)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_qw2uh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.94377, 11.8505)
+shape = SubResource("RectangleShape2D_xxp68")
+
+[node name="Control" type="Control" parent="Area2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -39.0
+offset_right = 22.0
+offset_bottom = -16.0
+
+[node name="TalkButton" type="TextureButton" parent="Area2D/Control"]
+layout_mode = 0
+offset_left = 10.7979
+offset_top = -2.62861
+offset_right = 36.7979
+offset_bottom = 25.3714
+action_mode = 0
+texture_normal = ExtResource("6_hnexr")

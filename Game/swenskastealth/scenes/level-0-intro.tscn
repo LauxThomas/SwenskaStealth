@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://chvglrmu6cmld"]
+
+[ext_resource type="Script" path="res://scripts/level_0_intro.gd" id="1_opvsd"]
+[ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="2_7md7q"]
+[ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_vhq0g"]
+[ext_resource type="PackedScene" uid="uid://dvwth5bf67ib8" path="res://scenes/dialog.tscn" id="3_81ewv"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="3_mefs3"]
+[ext_resource type="PackedScene" uid="uid://bc3g5ueltykrq" path="res://scenes/non-player-character.tscn" id="4_by8ap"]
+[ext_resource type="Script" path="res://scripts/non_player_character.gd" id="5_78ya6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awiub"]
+radius = 152.398
+
+[node name="Level 0 - Intro" type="Node2D"]
+script = ExtResource("1_opvsd")
+
+[node name="ForestBackground" type="Sprite2D" parent="."]
+position = Vector2(-1880, -117)
+texture = ExtResource("2_vhq0g")
+
+[node name="Dialog" parent="." instance=ExtResource("3_81ewv")]
+script = ExtResource("3_mefs3")
+
+[node name="Mentor" parent="." instance=ExtResource("4_by8ap")]
+script = ExtResource("5_78ya6")
+
+[node name="Raccoon" parent="." instance=ExtResource("2_7md7q")]
+z_index = 2
+
+[node name="objects" type="StaticBody2D" parent="."]
+z_index = 2
+position = Vector2(-904, -109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects"]
+z_index = 2
+position = Vector2(291, 812)
+shape = SubResource("CircleShape2D_awiub")
+
+[connection signal="box_ignored" from="Dialog" to="Raccoon" method="_on_dialog_box_ignored"]
+[connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
+[connection signal="character_talking" from="Mentor" to="Raccoon" method="_on_mentor_character_talking"]
+[connection signal="player_position_updated" from="Raccoon" to="Mentor" method="_on_raccoon_player_position_updated"]
