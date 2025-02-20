@@ -10,7 +10,7 @@ var talking = false # Indicates if player is talking or not
 @onready var sprite = $CharacterBody2D/Sprite2D
 
 func _ready():
-	target_position = global_position
+	_stop_movement()
 
 func _process(delta):
 	_move_on_click(delta, target_position)
@@ -62,8 +62,12 @@ func stop_animation():
 	if sprite:
 		sprite.stop()
 
+func _stop_movement():
+	target_position = global_position
+
 func _on_mentor_character_talking():
 	talking = true # Replace with function body.
 
-func _on_dialog_box_ignored() -> void:
+func _on_dialog_box_ignored():
 	talking = false
+	_stop_movement()
