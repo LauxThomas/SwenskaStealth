@@ -57,6 +57,11 @@ script = ExtResource("1_60r62")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
+limit_left = -6700
+limit_top = -2800
+limit_right = 3200
+limit_bottom = 2800
+limit_smoothed = true
 position_smoothing_enabled = true
 drag_left_margin = 0.86
 drag_top_margin = 0.88
