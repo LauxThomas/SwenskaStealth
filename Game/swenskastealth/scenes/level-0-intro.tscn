@@ -16,8 +16,9 @@
 [ext_resource type="Script" path="res://scenes/bookbutton.gd" id="14_50nsk"]
 [ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="15_j81ea"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_awiub"]
-radius = 152.398
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
+radius = 135.0
+height = 330.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22rgh"]
 bg_color = Color(0.955963, 0.955963, 0.955963, 1)
@@ -43,14 +44,39 @@ script = ExtResource("5_78ya6")
 [node name="Raccoon" parent="." instance=ExtResource("2_7md7q")]
 z_index = 2
 
-[node name="objects" type="StaticBody2D" parent="."]
+[node name="Collisions" type="StaticBody2D" parent="."]
 z_index = 2
 position = Vector2(-904, -109)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="objects"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
 z_index = 2
-position = Vector2(229, 964)
-shape = SubResource("CircleShape2D_awiub")
+position = Vector2(272, 969)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(112, 408)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(624, 1104)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1347, 1028)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1770, 776)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1903, 338)
+shape = SubResource("CapsuleShape2D_l3g7x")
 
 [node name="mushroom1" type="Sprite2D" parent="."]
 z_index = 2

@@ -1,15 +1,15 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var speed: float = 200.0
 signal player_position_updated  # Notifies other nodes interested in player position
 
 var target_position: Vector2
-var moving_horizontally = true  # Control horizontal/vertical priority
-var talking = false  # Indicates if the player is talking or not
-var moving = false  # 🚀 New flag to control movement state
+var moving_horizontally = true  
+var talking = false  
+var moving = false  
 
-@onready var sprite = $CharacterBody2D/Sprite2D
-@onready var target_marker = get_parent().find_child("TargetMarker")  # Finds the marker in the scene
+@onready var sprite = $Sprite2D
+@onready var target_marker = get_parent().find_child("TargetMarker")  
 
 func _ready():
 	_stop_movement()
@@ -22,41 +22,41 @@ func _input(event):
 			return
 
 		target_position = get_global_mouse_position()
-		moving_horizontally = true  # Reset movement priority
-		moving = true  # 🚀 Start movement
+		moving_horizontally = true  
+		moving = true  
 
-		# Move marker to the target position and show it
 		if target_marker:
 			target_marker.global_position = target_position
 			target_marker.show()
 
-func _process(delta):
-	if moving:  # 🚀 Move only when necessary
+func _physics_process(delta):  # ✅ Use _physics_process for collision handling
+	if moving:  
 		_move_to_click_position(delta)
 
 func _move_to_click_position(delta):
 	if global_position.distance_to(target_position) > 2 and not talking:
 		var direction = get_four_direction_vector(target_position - global_position)
-		global_position += direction * speed * delta  # Move only in one direction
+		velocity = direction * speed  # ✅ Use velocity instead of directly changing position
+		move_and_slide()  # ✅ This ensures collision is respected
 		update_animation(direction)
 		emit_signal("player_position_updated", global_position)
 	else:
 		stop_animation()
-		moving = false  # 🚀 Stop movement
+		moving = false  
 		if target_marker:
 			target_marker.hide()
 
 func get_four_direction_vector(delta_pos: Vector2) -> Vector2:
 	if moving_horizontally:
-		if abs(delta_pos.x) > 2:  # If horizontal movement needed
+		if abs(delta_pos.x) > 2:
 			return Vector2.RIGHT if delta_pos.x > 0 else Vector2.LEFT
 		else:
-			moving_horizontally = false  # Switch to vertical
+			moving_horizontally = false  
 	if not moving_horizontally:
-		if abs(delta_pos.y) > 2:  # If vertical movement needed
+		if abs(delta_pos.y) > 2:
 			return Vector2.DOWN if delta_pos.y > 0 else Vector2.UP
 	
-	return Vector2.ZERO  # Stop if no movement needed
+	return Vector2.ZERO  
 
 func update_animation(direction: Vector2):
 	if sprite:
@@ -77,11 +77,11 @@ func stop_animation():
 
 func _stop_movement():
 	target_position = global_position
-	moving = false  # 🚀 Ensure movement stops
+	moving = false  
 
 func _on_mentor_character_talking():
 	talking = true
-	_stop_movement()  # 🚀 Stop movement when talking
+	_stop_movement()
 
 func _on_dialog_box_ignored():
 	talking = false
