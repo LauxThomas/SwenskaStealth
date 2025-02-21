@@ -1,44 +1,50 @@
 extends Node2D
 
 @export var speed: float = 200.0
-signal player_position_updated # Notifies other nodes interested on player position
+signal player_position_updated  # Notifies other nodes interested in player position
 
 var target_position: Vector2
 var moving_horizontally = true  # Control horizontal/vertical priority
-var talking = false # Indicates if player is talking or not
+var talking = false  # Indicates if the player is talking or not
+var moving = false  # 🚀 New flag to control movement state
 
 @onready var sprite = $CharacterBody2D/Sprite2D
 @onready var target_marker = get_parent().find_child("TargetMarker")  # Finds the marker in the scene
 
 func _ready():
 	_stop_movement()
-	target_marker.hide()  # Initially hide the marker
-
-func _process(delta):
-	_move_to_click_position(delta, target_position) 	# TODO: outsource to input event (right now it is moving every frame)
-
+	if target_marker:
+		target_marker.hide()  # Initially hide the marker
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if talking:
 			return
-		else:
-			target_position = get_global_mouse_position()
-			moving_horizontally = true  # Reset movement priority
-			# Move marker to the target position and show it
+
+		target_position = get_global_mouse_position()
+		moving_horizontally = true  # Reset movement priority
+		moving = true  # 🚀 Start movement
+
+		# Move marker to the target position and show it
+		if target_marker:
 			target_marker.global_position = target_position
 			target_marker.show()
 
-func _move_to_click_position(delta, target):
-	if global_position.distance_to(target) > 2 and not talking:
-		var direction = get_four_direction_vector(target - global_position)
+func _process(delta):
+	if moving:  # 🚀 Move only when necessary
+		_move_to_click_position(delta)
+
+func _move_to_click_position(delta):
+	if global_position.distance_to(target_position) > 2 and not talking:
+		var direction = get_four_direction_vector(target_position - global_position)
 		global_position += direction * speed * delta  # Move only in one direction
 		update_animation(direction)
-		#print(global_position)
 		emit_signal("player_position_updated", global_position)
 	else:
 		stop_animation()
-		target_marker.hide()  # Hide marker when reaching the destination
+		moving = false  # 🚀 Stop movement
+		if target_marker:
+			target_marker.hide()
 
 func get_four_direction_vector(delta_pos: Vector2) -> Vector2:
 	if moving_horizontally:
@@ -71,9 +77,11 @@ func stop_animation():
 
 func _stop_movement():
 	target_position = global_position
+	moving = false  # 🚀 Ensure movement stops
 
 func _on_mentor_character_talking():
-	talking = true # Replace with function body.
+	talking = true
+	_stop_movement()  # 🚀 Stop movement when talking
 
 func _on_dialog_box_ignored():
 	talking = false
