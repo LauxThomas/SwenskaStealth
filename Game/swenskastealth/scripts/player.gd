@@ -8,12 +8,15 @@ var moving_horizontally = true  # Control horizontal/vertical priority
 var talking = false # Indicates if player is talking or not
 
 @onready var sprite = $CharacterBody2D/Sprite2D
+@onready var target_marker = get_parent().find_child("TargetMarker")  # Finds the marker in the scene
 
 func _ready():
 	_stop_movement()
+	target_marker.hide()  # Initially hide the marker
 
 func _process(delta):
-	_move_to_click_position(delta, target_position)
+	_move_to_click_position(delta, target_position) 	# TODO: outsource to input event (right now it is moving every frame)
+
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -22,6 +25,9 @@ func _input(event):
 		else:
 			target_position = get_global_mouse_position()
 			moving_horizontally = true  # Reset movement priority
+			# Move marker to the target position and show it
+			target_marker.global_position = target_position
+			target_marker.show()
 
 func _move_to_click_position(delta, target):
 	if global_position.distance_to(target) > 2 and not talking:
@@ -32,6 +38,7 @@ func _move_to_click_position(delta, target):
 		emit_signal("player_position_updated", global_position)
 	else:
 		stop_animation()
+		target_marker.hide()  # Hide marker when reaching the destination
 
 func get_four_direction_vector(delta_pos: Vector2) -> Vector2:
 	if moving_horizontally:
