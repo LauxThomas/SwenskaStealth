@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dee8tyg0v7yhr"]
+
+[ext_resource type="Texture2D" uid="uid://dtfwqkwc0v6sw" path="res://assets/objects/book_dictionary.png" id="1_0uaf2"]
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_c7mxv"]
+[ext_resource type="Script" path="res://texture_rect.gd" id="2_6hcq0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_c7mxv")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control"]
+z_index = 5
+layout_mode = 0
+offset_left = 1383.0
+offset_top = -387.0
+offset_right = 1512.0
+offset_bottom = -252.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel"]
+z_index = 13
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 665.0
+offset_bottom = 688.0
+scale = Vector2(0.16, 0.16)
+mouse_filter = 0
+texture = ExtResource("1_0uaf2")
+script = ExtResource("2_6hcq0")
