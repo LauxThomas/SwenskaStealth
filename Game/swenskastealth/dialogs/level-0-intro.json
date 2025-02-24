@@ -1,0 +1,10 @@
+[
+	{
+		"message": "Hej, you’re finally awake.  Välkommen till Sverige.",
+		"continue_button_text": "Sverige?"
+	},
+	{
+		"message": "Ja, välkommen till Sverige.  Welcome to Sweden!  Are you ready?",
+		"continue_button_text": "Ready for What?"
+	}
+]

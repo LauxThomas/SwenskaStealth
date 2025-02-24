@@ -1,29 +1,27 @@
 extends Node2D
 
 signal update_dialog(dialog)
-
-var dialog = {
-	"message": null,
-	"continue_button_text": null,
-	"secondary_button_text": null
-}
+@onready var dialogs = _load_json("res://dialogs/level-0-intro.json")
+var current_dialog_id = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	dialog.message = "Hej, you’re finally awake.  Välkommen till Sverige."
-	dialog.continue_button_text = "Sverige?"
-	dialog.secondary_button_text = null
-	emit_signal("update_dialog", dialog)
+	if dialogs.is_empty():
+		print("failed to load dialogs")
+		return
+	emit_signal("update_dialog", dialogs[current_dialog_id])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
 
 func _on_dialog_continue_button_pressed():
-	_get_next_dialog()
-	print(dialog)
-	emit_signal("update_dialog", dialog)
+	current_dialog_id += 1
+	print(dialogs[current_dialog_id])
+	emit_signal("update_dialog", dialogs[current_dialog_id])
 
-func _get_next_dialog():
-	dialog.message = "Ja, välkommen till Sverige.  Welcome to Sweden!  Are you ready?"
-	dialog.continue_button_text = "I am ready"
-	dialog.secondary_button_text = "Ready for what?"
+func _load_json(path):
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file:
+		var content = file.get_as_text()
+		return JSON.parse_string(content) if JSON.parse_string(content) else {}
+	return {}
