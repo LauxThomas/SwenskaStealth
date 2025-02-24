@@ -5,6 +5,10 @@
 	},
 	{
 		"message": "Ja, välkommen till Sverige.  Welcome to Sweden!  Are you ready?",
-		"continue_button_text": "Ready for What?"
+		"continue_button_text": "I’m ready!"
+	},
+	{
+		"message": "That’s the spirit!  Your first mission will teach you a lot.",
+		"continue_button_text": null
 	}
 ]

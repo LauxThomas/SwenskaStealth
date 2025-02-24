@@ -36,5 +36,10 @@ func _on_continue_button_interaction(event):
 			click_count = 0
 
 func _on_level_0_intro_update_dialog(dialog):
-	dialog_box_message.text = dialog.message
-	dialog_box_continue_button.text = dialog.continue_button_text
+	if dialog.message:
+		dialog_box_message.text = dialog.message
+	if dialog.continue_button_text:
+		dialog_box_continue_button.text = dialog.continue_button_text
+		dialog_box_continue_button.show()
+	else:
+		dialog_box_continue_button.hide()
