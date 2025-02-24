@@ -3,7 +3,7 @@ extends CanvasLayer
 signal box_closed #Notifies other nodes (like player, so it can continue moving)
 signal continue_button_pressed #Notifies other nodes (like level controller, so level decides next dialogue)"
 @onready var dialog_box =  $Control/Box
-@onready var dialog_box_message = $Control/Box/Text
+@onready var dialog_box_message = $Control/Box/MarginContainer/Text
 @onready var dialog_box_continue_button =  $Control/Box/ContinueButton
 var mouse_position: Vector2
 var click_count = 0
