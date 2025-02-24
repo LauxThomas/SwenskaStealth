@@ -1,6 +1,12 @@
 extends Node2D
 
+signal update_dialog(dialog)
 
+var dialog = {
+	"message": null,
+	"continue_button_text": null,
+	"secondary_button_text": null
+}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,6 +16,12 @@ func _ready() -> void:
 func _process(_delta):
 	pass
 
+func _on_dialog_continue_button_pressed():
+	_get_next_dialog()
+	print(dialog)
+	emit_signal("update_dialog", dialog)
 
-func _on_raccoon_player_position_updated() -> void:
-	pass # Replace with function body.
+func _get_next_dialog():
+	dialog.message = "Ja, välkommen till Sverige.  Welcome to Sweden!  Are you ready?"
+	dialog.continue_button_text = "I am ready"
+	dialog.secondary_button_text = "Ready for what?"

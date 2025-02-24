@@ -1,16 +1,17 @@
 extends CanvasLayer
 
-signal box_closed #Notifies other nodes if dialog box was closed
+signal box_closed #Notifies other nodes (like player, so it can continue moving)
+signal continue_button_pressed #Notifies other nodes (like level controller, so level decides next dialogue)"
 @onready var dialog_box =  $Control/Box
 @onready var dialog_box_message = $Control/Box/Text
-@onready var dialog_box_button =  $Control/Box/Button
+@onready var dialog_box_continue_button =  $Control/Box/Button
 var mouse_position: Vector2
 var click_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	dialog_box.hide()
-	dialog_box_button.connect("gui_input", _on_button_interaction)
+	dialog_box_continue_button.connect("gui_input", _on_continue_button_interaction)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -27,12 +28,13 @@ func _on_mentor_character_talking():
 	dialog_box.show()
 
 #This is temporal solution because the pressed signal of the button is not being tiggered
-func _on_button_interaction(event):
+func _on_continue_button_interaction(event):
 	if event is InputEventMouseButton:
 		click_count += 1
-		print("click on button")
-		print(click_count)
 		if click_count == 2:
-			print("signal to get new dialogue")
-			dialog_box_message.text = "algo nuevo"
+			emit_signal("continue_button_pressed")
 			click_count = 0
+
+func _on_level_0_intro_update_dialog(dialog):
+	dialog_box_message.text = dialog.message
+	dialog_box_continue_button.text = dialog.continue_button_text
