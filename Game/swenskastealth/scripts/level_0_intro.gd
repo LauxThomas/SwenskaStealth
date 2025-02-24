@@ -8,8 +8,11 @@ var dialog = {
 	"secondary_button_text": null
 }
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void: 
-	pass # Replace with function body.
+func _ready() -> void:
+	dialog.message = "Hej, you’re finally awake.  Välkommen till Sverige."
+	dialog.continue_button_text = "Sverige?"
+	dialog.secondary_button_text = null
+	emit_signal("update_dialog", dialog)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
