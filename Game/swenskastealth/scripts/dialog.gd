@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal box_ignored #Notifies other nodes if dialog box was ignored
+signal box_closed #Notifies other nodes if dialog box was closed
 @onready var dialog_box =  $Control/Box
 @onready var dialog_box_message = $Control/Box/Text
 @onready var dialog_box_button =  $Control/Box/Button
@@ -19,7 +19,7 @@ func _input(event):
 		mouse_position = dialog_box.get_global_mouse_position()
 		if dialog_box.visible and not dialog_box.get_global_rect().has_point(mouse_position):
 			dialog_box.hide()
-			emit_signal("box_ignored")
+			emit_signal("box_closed")
 
 func _on_mentor_character_talking():
 	dialog_box.show()

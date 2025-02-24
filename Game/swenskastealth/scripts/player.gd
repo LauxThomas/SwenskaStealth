@@ -68,6 +68,6 @@ func _stop_movement():
 func _on_mentor_character_talking():
 	talking = true # Replace with function body.
 
-func _on_dialog_box_ignored():
+func _on_dialog_box_closed():
 	talking = false
 	_stop_movement()

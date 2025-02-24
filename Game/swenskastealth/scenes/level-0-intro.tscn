@@ -36,7 +36,7 @@ z_index = 2
 position = Vector2(291, 812)
 shape = SubResource("CircleShape2D_awiub")
 
-[connection signal="box_ignored" from="Dialog" to="Raccoon" method="_on_dialog_box_ignored"]
+[connection signal="box_closed" from="Dialog" to="Raccoon" method="_on_dialog_box_closed"]
 [connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
 [connection signal="character_talking" from="Mentor" to="Raccoon" method="_on_mentor_character_talking"]
 [connection signal="player_position_updated" from="Raccoon" to="Mentor" method="_on_raccoon_player_position_updated"]
