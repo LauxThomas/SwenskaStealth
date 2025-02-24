@@ -28,7 +28,7 @@ offset_bottom = -107.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="Control/Box"]
+[node name="ContinueButton" type="Button" parent="Control/Box"]
 z_index = 1
 layout_direction = 2
 layout_mode = 1
