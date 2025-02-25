@@ -16,12 +16,10 @@ func _ready():
 	talk_button.connect("gui_input", _on_talk_button_clicked)
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
-		talk_button.show()
+	talk_button.show()
 
 func _on_body_exited(body):
-	if body.is_in_group("player"):
-		talk_button.hide()
+	talk_button.hide()
 
 func _on_talk_button_clicked(event):
 	if event is InputEventMouseButton and event.pressed:
