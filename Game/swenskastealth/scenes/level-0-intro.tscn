@@ -380,7 +380,9 @@ script = ExtResource("14_50nsk")
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("15_j81ea")
 
-[connection signal="box_ignored" from="Dialog" to="Raccoon" method="_on_dialog_box_ignored"]
+[connection signal="update_dialog" from="." to="Dialog" method="_on_level_0_intro_update_dialog"]
+[connection signal="box_closed" from="Dialog" to="Raccoon" method="_on_dialog_box_closed"]
+[connection signal="continue_button_pressed" from="Dialog" to="." method="_on_dialog_continue_button_pressed"]
 [connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
 [connection signal="character_talking" from="Mentor" to="Raccoon" method="_on_mentor_character_talking"]
 [connection signal="player_position_updated" from="Raccoon" to="Mentor" method="_on_raccoon_player_position_updated"]
