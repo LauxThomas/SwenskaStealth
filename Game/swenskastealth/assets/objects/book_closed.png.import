@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm14r8jsmtr8s"
-path="res://.godot/imported/Chanterelles1.png-e4e02dcef6e6525b7c307a3ac0393cf0.ctex"
+uid="uid://dtfwqkwc0v6sw"
+path="res://.godot/imported/book_closed.png-06a6805074ca389ce390b6d88757c452.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/Chanterelles1.png"
-dest_files=["res://.godot/imported/Chanterelles1.png-e4e02dcef6e6525b7c307a3ac0393cf0.ctex"]
+source_file="res://assets/objects/book_closed.png"
+dest_files=["res://.godot/imported/book_closed.png-06a6805074ca389ce390b6d88757c452.ctex"]
 
 [params]
 
