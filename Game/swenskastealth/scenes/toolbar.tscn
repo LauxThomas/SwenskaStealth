@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dtfwqkwc0v6sw" path="res://assets/objects/book_closed.png" id="1_2n0kx"]
 [ext_resource type="Texture2D" uid="uid://b2emsr0sxom30" path="res://assets/objects/book_open.png" id="2_ffmjj"]
-[ext_resource type="Script" path="res://scripts/toolbar.gd" id="3_31wxl"]
+[ext_resource type="Script" path="res://scripts/dictionary.gd" id="3_31wxl"]
 [ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="4_lomfy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22rgh"]
@@ -14,7 +14,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="Toolbar" type="CanvasLayer"]
 
-[node name="UI_control" type="Control" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchor_left = 0.879
 anchor_top = 0.076
@@ -27,7 +27,7 @@ offset_bottom = -0.0720215
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dictionary" type="TextureButton" parent="UI_control"]
+[node name="Dictionary" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -44,7 +44,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("3_31wxl")
 
-[node name="dictionary_pannel" type="Panel" parent="UI_control"]
+[node name="dictionary_pannel" type="Panel" parent="Control"]
 visible = false
 layout_mode = 0
 offset_left = 359.0
@@ -54,7 +54,7 @@ offset_bottom = 138.0
 scale = Vector2(4.895, 4.895)
 theme_override_styles/panel = SubResource("StyleBoxFlat_22rgh")
 
-[node name="dictionary_label" type="Label" parent="UI_control/dictionary_pannel"]
+[node name="dictionary_label" type="Label" parent="Control/dictionary_pannel"]
 layout_mode = 0
 offset_right = 198.0
 offset_bottom = 197.0
@@ -64,7 +64,7 @@ text = "Dictionary Entries:
 label_settings = SubResource("LabelSettings_d2pvo")
 autowrap_mode = 2
 
-[node name="MushroomsCounter" type="TextureButton" parent="UI_control"]
+[node name="MushroomsCounter" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
