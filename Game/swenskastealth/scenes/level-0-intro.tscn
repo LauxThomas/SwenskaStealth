@@ -314,10 +314,9 @@ texture = ExtResource("10_bp63x")
 position = Vector2(-574, 1326)
 texture = ExtResource("11_vi15s")
 
-[node name="UI_layer" type="CanvasLayer" parent="."]
+[node name="Toolbar" type="CanvasLayer" parent="."]
 
-[node name="UI_control" type="Control" parent="UI_layer"]
-visible = false
+[node name="UI_control" type="Control" parent="Toolbar"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -325,7 +324,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="bookbutton" type="TextureButton" parent="UI_layer/UI_control"]
+[node name="bookbutton" type="TextureButton" parent="Toolbar/UI_control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -341,7 +340,7 @@ texture_pressed = ExtResource("13_37tgk")
 texture_hover = ExtResource("13_37tgk")
 script = ExtResource("14_50nsk")
 
-[node name="dictionary_pannel" type="Panel" parent="UI_layer/UI_control"]
+[node name="dictionary_pannel" type="Panel" parent="Toolbar/UI_control"]
 visible = false
 layout_mode = 0
 offset_left = 359.0
@@ -351,7 +350,7 @@ offset_bottom = 138.0
 scale = Vector2(4.895, 4.895)
 theme_override_styles/panel = SubResource("StyleBoxFlat_22rgh")
 
-[node name="dictionary_label" type="Label" parent="UI_layer/UI_control/dictionary_pannel"]
+[node name="dictionary_label" type="Label" parent="Toolbar/UI_control/dictionary_pannel"]
 layout_mode = 0
 offset_right = 198.0
 offset_bottom = 197.0
@@ -361,7 +360,7 @@ text = "Dictionary Entries:
 label_settings = SubResource("LabelSettings_d2pvo")
 autowrap_mode = 2
 
-[node name="mushroombutton" type="TextureButton" parent="UI_layer/UI_control"]
+[node name="mushroombutton" type="TextureButton" parent="Toolbar/UI_control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
