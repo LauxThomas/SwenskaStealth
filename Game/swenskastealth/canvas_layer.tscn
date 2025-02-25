@@ -1,11 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://dee8tyg0v7yhr"]
 
 [ext_resource type="Texture2D" uid="uid://dtfwqkwc0v6sw" path="res://assets/objects/book_dictionary.png" id="1_0uaf2"]
-[ext_resource type="Script" path="res://canvas_layer.gd" id="1_c7mxv"]
-[ext_resource type="Script" path="res://texture_rect.gd" id="2_6hcq0"]
+
+[sub_resource type="GDScript" id="GDScript_forl7"]
+script/source = "
+extends CanvasLayer
+
+func _ready():
+	print(\"CanvasLayer Ready\")
+	visible = true  # Ensure it's visible
+"
+
+[sub_resource type="GDScript" id="GDScript_yp3yv"]
+script/source = "extends TextureRect
+
+
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var mouse_pos = get_global_mouse_position()
+		if get_global_rect().has_point(mouse_pos):
+			print(\"Clicked on TextureRect!\")
+"
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_c7mxv")
+script = SubResource("GDScript_forl7")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -31,4 +50,4 @@ offset_bottom = 688.0
 scale = Vector2(0.16, 0.16)
 mouse_filter = 0
 texture = ExtResource("1_0uaf2")
-script = ExtResource("2_6hcq0")
+script = SubResource("GDScript_yp3yv")
