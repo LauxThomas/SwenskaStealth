@@ -16,22 +16,26 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="UI_control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.879
+anchor_top = 0.076
+anchor_right = 0.964
+anchor_bottom = 0.389
+offset_left = 0.391907
+offset_top = -0.248005
+offset_right = -0.528076
+offset_bottom = -0.0720215
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Dictionary" type="TextureButton" parent="UI_control"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -105.0
-offset_top = 30.0
-offset_right = 15.0
-offset_bottom = 150.0
-grow_horizontal = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 120.0
+grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_2n0kx")
 texture_pressed = ExtResource("2_ffmjj")
@@ -62,14 +66,16 @@ autowrap_mode = 2
 
 [node name="MushroomsCounter" type="TextureButton" parent="UI_control"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -103.0
-offset_top = 113.0
-offset_right = 17.0
-offset_bottom = 233.0
-grow_horizontal = 0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -120.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("4_lomfy")
 stretch_mode = 5
