@@ -20,6 +20,11 @@ func _get_next_dialog():
 		var new_dialog = dialogs[current_dialog_id]
 		print(new_dialog)
 		emit_signal("update_dialog", new_dialog)
+	else:
+		if current_dialog_id == dialogs.size()-1: #End of part 1 is reached
+			dialogs = _load_json("res://dialogs/level-0-part-2.json")
+			current_dialog_id = -1
+			
 
 func _on_dialog_continue_button_pressed():
 	_get_next_dialog()
