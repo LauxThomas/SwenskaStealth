@@ -86,3 +86,7 @@ func _on_mentor_character_talking():
 func _on_dialog_box_closed():
 	talking = false
 	_stop_movement()
+
+func _on_level_0__intro_start_dialog():
+	talking = true
+	_stop_movement()

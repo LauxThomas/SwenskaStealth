@@ -2,6 +2,7 @@ extends Node2D
 
 signal update_dialog(dialog)
 signal show_dictionary()
+signal start_dialog()
 @onready var dialogs = _load_json("res://dialogs/level-0-intro-before-dictionary.json")
 var current_dialog_id = -1
 # Called when the node enters the scene tree for the first time.
@@ -37,3 +38,7 @@ func _load_json(path):
 		var content = file.get_as_text()
 		return JSON.parse_string(content) if JSON.parse_string(content) else {}
 	return {}
+
+func _on_first_dialog_trigger_body_entered(body):
+	print("body entered trigger")
+	emit_signal("start_dialog")

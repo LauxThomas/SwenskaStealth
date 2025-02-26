@@ -43,3 +43,6 @@ func _on_level_0_intro_update_dialog(dialog):
 		dialog_box_continue_button.show()
 	else:
 		dialog_box_continue_button.hide()
+
+func _on_level_0__intro_start_dialog() -> void:
+	dialog_box.show()

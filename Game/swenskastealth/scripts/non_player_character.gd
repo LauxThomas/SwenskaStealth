@@ -50,3 +50,6 @@ func _update_animation(direction: Vector2):
 			npc_sprite.play("down")  # Down animation
 		else:
 			npc_sprite.play("up")  # Up animation
+
+func _on_level_0__intro_start_dialog():
+	_move_towards_player()

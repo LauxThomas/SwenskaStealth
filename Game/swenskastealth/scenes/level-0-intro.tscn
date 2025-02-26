@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://chvglrmu6cmld"]
+[gd_scene load_steps=17 format=3 uid="uid://chvglrmu6cmld"]
 
 [ext_resource type="Script" path="res://scripts/level_0_intro.gd" id="1_opvsd"]
 [ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="2_7md7q"]
@@ -19,6 +19,9 @@
 radius = 135.0
 height = 330.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4mm1"]
+size = Vector2(1015, 20)
+
 [node name="Level 0 - Intro" type="Node2D"]
 script = ExtResource("1_opvsd")
 
@@ -31,6 +34,7 @@ script = ExtResource("3_mefs3")
 
 [node name="Mentor" parent="." instance=ExtResource("4_by8ap")]
 z_index = 2
+position = Vector2(192, 143)
 script = ExtResource("5_78ya6")
 
 [node name="Raccoon" parent="." instance=ExtResource("2_7md7q")]
@@ -288,6 +292,13 @@ rotation = -2.79998
 scale = Vector2(1, 0.304239)
 shape = SubResource("CapsuleShape2D_l3g7x")
 
+[node name="FirstDialogTrigger" type="Area2D" parent="."]
+position = Vector2(194, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstDialogTrigger"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_g4mm1")
+
 [node name="mushroom1" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(-769, 1315)
@@ -314,9 +325,13 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("15_j81ea")
 
 [connection signal="show_dictionary" from="." to="Toolbar" method="_on_level_0__intro_show_dictionary"]
+[connection signal="start_dialog" from="." to="Dialog" method="_on_level_0__intro_start_dialog"]
+[connection signal="start_dialog" from="." to="Mentor" method="_on_level_0__intro_start_dialog"]
+[connection signal="start_dialog" from="." to="Raccoon" method="_on_level_0__intro_start_dialog"]
 [connection signal="update_dialog" from="." to="Dialog" method="_on_level_0_intro_update_dialog"]
 [connection signal="box_closed" from="Dialog" to="Raccoon" method="_on_dialog_box_closed"]
 [connection signal="continue_button_pressed" from="Dialog" to="." method="_on_dialog_continue_button_pressed"]
 [connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
 [connection signal="character_talking" from="Mentor" to="Raccoon" method="_on_mentor_character_talking"]
 [connection signal="player_position_updated" from="Raccoon" to="Mentor" method="_on_raccoon_player_position_updated"]
+[connection signal="body_entered" from="FirstDialogTrigger" to="." method="_on_first_dialog_trigger_body_entered"]
