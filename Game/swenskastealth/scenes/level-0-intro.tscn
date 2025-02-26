@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="10_bp63x"]
 [ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/mushroom_red_white.png" id="11_vi15s"]
 [ext_resource type="PackedScene" uid="uid://bdg3o0svqldd0" path="res://scenes/toolbar.tscn" id="12_s38c4"]
-[ext_resource type="Script" path="res://toolbar.gd" id="13_any41"]
+[ext_resource type="Script" path="res://scripts/toolbar.gd" id="13_any41"]
 [ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="15_j81ea"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
