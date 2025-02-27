@@ -4,7 +4,7 @@ signal update_dialog(dialog)
 signal show_dictionary()
 
 @onready var dialogs = _load_json("res://dialogs/level-0-intro-before-dictionary.json")
-@onready var audio_player = $AudioStreamPlayer # Ensure this node exists in the scene
+@onready var audio_player = $AudioStreamPlayer 
 
 var current_dialog_id = -1
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 	if dialogs.is_empty():
 		print("Failed to load dialogs")
 		return
-	_get_next_dialog()
+	#_get_next_dialog()
 
 func _get_next_dialog():
 	if current_dialog_id < dialogs.size() - 1:
