@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dhux26fycydlk"
-path="res://.godot/imported/rav-try99-repeat-10.wav-c001f79a63693c1061cfb0d4f35b55e0.sample"
+uid="uid://bg2rqyxdm486a"
+path="res://.godot/imported/rav-try99-repeat-10.wav-0ebfc0fbe7fd98c5d01485d8079e8d1e.sample"
 
 [deps]
 
-source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-repeat-10.wav"
-dest_files=["res://.godot/imported/rav-try99-repeat-10.wav-c001f79a63693c1061cfb0d4f35b55e0.sample"]
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-repeat-10.wav"
+dest_files=["res://.godot/imported/rav-try99-repeat-10.wav-0ebfc0fbe7fd98c5d01485d8079e8d1e.sample"]
 
 [params]
 

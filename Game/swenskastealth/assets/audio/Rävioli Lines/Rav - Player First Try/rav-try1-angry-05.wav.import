@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://0tauexlr0ibe"
-path="res://.godot/imported/rav-try1-angry-05.wav-a8fe7b5f6bc52cd31d6d1827c28b534c.sample"
+uid="uid://bjqtqvw46eghr"
+path="res://.godot/imported/rav-try1-angry-05.wav-4c4b0472cc7130bff1e15ff536ba0d97.sample"
 
 [deps]
 
-source_file="res://assets/audio/Rävioli Lines/Rav - Player First Try/rav-try1-angry-05.wav"
-dest_files=["res://.godot/imported/rav-try1-angry-05.wav-a8fe7b5f6bc52cd31d6d1827c28b534c.sample"]
+source_file="res://assets/audio/Rävioli Lines/Rav - Player First Try/rav-try1-angry-05.wav"
+dest_files=["res://.godot/imported/rav-try1-angry-05.wav-4c4b0472cc7130bff1e15ff536ba0d97.sample"]
 
 [params]
 

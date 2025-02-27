@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://3qowap7q631h"
-path="res://.godot/imported/rav-try99-potato-08.wav-644c9e455ac1601698cf236a13a6bc9f.sample"
+uid="uid://bweeowlisd2pi"
+path="res://.godot/imported/rav-try99-potato-08.wav-7b4a712d751d6e46df6dd526efd25acb.sample"
 
 [deps]
 
-source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-potato-08.wav"
-dest_files=["res://.godot/imported/rav-try99-potato-08.wav-644c9e455ac1601698cf236a13a6bc9f.sample"]
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-potato-08.wav"
+dest_files=["res://.godot/imported/rav-try99-potato-08.wav-7b4a712d751d6e46df6dd526efd25acb.sample"]
 
 [params]
 
