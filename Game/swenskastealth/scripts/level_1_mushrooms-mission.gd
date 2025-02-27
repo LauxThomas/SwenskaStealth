@@ -5,14 +5,14 @@ signal start_dialog()
 signal close_dialog()
 signal stop_talking()
 @onready var dialogs = _load_json("res://dialogs/level-1-mushrooms-mission.json")
-var mission_dialogs: Array
+var mission_instructions: Array
 var current_dialog_id = -1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if dialogs.is_empty():
 		print("failed to load dialogs")
 		return
-	mission_dialogs = dialogs.filter(_is_mission_dialog)
+	mission_instructions = dialogs.filter(_is_mission_dialog)
 	_get_next_dialog()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -41,7 +41,7 @@ func _on_dialog_box_ignored():
 
 func _on_mission_trigger_body_entered(body):
 	if body.name == "Raccoon":
-		dialogs = mission_dialogs
+		dialogs = mission_instructions
 		current_dialog_id = 0
 		emit_signal("update_dialog", dialogs[current_dialog_id])
 		emit_signal("start_dialog")
