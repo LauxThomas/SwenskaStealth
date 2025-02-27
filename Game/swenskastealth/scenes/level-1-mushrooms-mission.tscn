@@ -338,67 +338,69 @@ texture = ExtResource("14_fdk5y")
 position = Vector2(-5, -27)
 shape = SubResource("RectangleShape2D_kw6mo")
 
-[node name="Mushroom Purple" parent="." instance=ExtResource("11_8lo8p")]
+[node name="Mushrooms Parent" type="Node2D" parent="."]
+
+[node name="Mushroom Purple" parent="Mushrooms Parent" instance=ExtResource("11_8lo8p")]
 position = Vector2(377, -183)
 
-[node name="Mushroom Purple2" parent="." instance=ExtResource("11_8lo8p")]
+[node name="Mushroom Purple2" parent="Mushrooms Parent" instance=ExtResource("11_8lo8p")]
 position = Vector2(137, -234)
 
-[node name="Mushroom Purple3" parent="." instance=ExtResource("11_8lo8p")]
+[node name="Mushroom Purple3" parent="Mushrooms Parent" instance=ExtResource("11_8lo8p")]
 position = Vector2(-218, 319)
 
-[node name="Mushroom Purple4" parent="." instance=ExtResource("11_8lo8p")]
+[node name="Mushroom Purple4" parent="Mushrooms Parent" instance=ExtResource("11_8lo8p")]
 position = Vector2(26, 533)
 
-[node name="Mushroom Purple5" parent="." instance=ExtResource("11_8lo8p")]
+[node name="Mushroom Purple5" parent="Mushrooms Parent" instance=ExtResource("11_8lo8p")]
 position = Vector2(547, 406)
 
-[node name="Mushroom Purple6" parent="." instance=ExtResource("11_8lo8p")]
+[node name="Mushroom Purple6" parent="Mushrooms Parent" instance=ExtResource("11_8lo8p")]
 position = Vector2(-210, -17)
 
-[node name="Mushroom Purple7" parent="." instance=ExtResource("11_8lo8p")]
+[node name="Mushroom Purple7" parent="Mushrooms Parent" instance=ExtResource("11_8lo8p")]
 position = Vector2(645, 184)
 
-[node name="Mushroom Yellow" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(-242, 67)
 
-[node name="Mushroom Yellow2" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow2" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(-129, -160)
 
-[node name="Mushroom Yellow3" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow3" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(265, -207)
 
-[node name="Mushroom Yellow4" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow4" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(424, 131)
 
-[node name="Mushroom Yellow5" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow5" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(494, -83)
 
-[node name="Mushroom Yellow6" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow6" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(-52, 493)
 
-[node name="Mushroom Yellow7" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow7" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(154, 440)
 
-[node name="Mushroom Yellow8" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow8" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(-123, 236)
 
-[node name="Mushroom Yellow9" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow9" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(354, 17)
 
-[node name="Mushroom Yellow10" parent="." instance=ExtResource("16_s22k8")]
+[node name="Mushroom Yellow10" parent="Mushrooms Parent" instance=ExtResource("16_s22k8")]
 position = Vector2(162, -105)
 
-[node name="Mushroom Red" parent="." instance=ExtResource("14_pjbu1")]
+[node name="Mushroom Red" parent="Mushrooms Parent" instance=ExtResource("14_pjbu1")]
 position = Vector2(-222, 187)
 
-[node name="Mushroom Red2" parent="." instance=ExtResource("14_pjbu1")]
+[node name="Mushroom Red2" parent="Mushrooms Parent" instance=ExtResource("14_pjbu1")]
 position = Vector2(8, -222)
 
-[node name="Mushroom Red3" parent="." instance=ExtResource("14_pjbu1")]
+[node name="Mushroom Red3" parent="Mushrooms Parent" instance=ExtResource("14_pjbu1")]
 position = Vector2(-91, 398)
 
-[node name="Mushroom Red4" parent="." instance=ExtResource("14_pjbu1")]
+[node name="Mushroom Red4" parent="Mushrooms Parent" instance=ExtResource("14_pjbu1")]
 position = Vector2(570, 46)
 
 [connection signal="close_dialog" from="." to="Dialog" method="_on_close_dialog"]
