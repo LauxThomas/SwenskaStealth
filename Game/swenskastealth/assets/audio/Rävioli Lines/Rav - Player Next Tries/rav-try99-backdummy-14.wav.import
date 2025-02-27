@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7rqcmccwq8pm"
+path="res://.godot/imported/rav-try99-backdummy-14.wav-89a81a6128b3075e233c15341c7dc832.sample"
+
+[deps]
+
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-backdummy-14.wav"
+dest_files=["res://.godot/imported/rav-try99-backdummy-14.wav-89a81a6128b3075e233c15341c7dc832.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

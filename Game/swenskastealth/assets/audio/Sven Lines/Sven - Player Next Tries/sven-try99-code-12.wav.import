@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dg1bnl7p1ixf5"
+path="res://.godot/imported/sven-try99-code-12.wav-9f27f5699b9e55bd0c4361b96e71203f.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sven Lines/Sven - Player Next Tries/sven-try99-code-12.wav"
+dest_files=["res://.godot/imported/sven-try99-code-12.wav-9f27f5699b9e55bd0c4361b96e71203f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
