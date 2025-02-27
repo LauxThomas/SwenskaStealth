@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cskt4vsps5bi5"
-path="res://.godot/imported/rav-stolen-scold-22.wav-b04ab09f3bdc069e8d9565eef6fb5726.sample"
+uid="uid://p7rfeqx73pye"
+path="res://.godot/imported/rav-stolen-scold-22.wav-53366b2c48081c1bcd526923bcff7388.sample"
 
 [deps]
 
-source_file="res://assets/audio/Rävioli Lines/Rav - Player Success/rav-stolen-scold-22.wav"
-dest_files=["res://.godot/imported/rav-stolen-scold-22.wav-b04ab09f3bdc069e8d9565eef6fb5726.sample"]
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Success/rav-stolen-scold-22.wav"
+dest_files=["res://.godot/imported/rav-stolen-scold-22.wav-53366b2c48081c1bcd526923bcff7388.sample"]
 
 [params]
 

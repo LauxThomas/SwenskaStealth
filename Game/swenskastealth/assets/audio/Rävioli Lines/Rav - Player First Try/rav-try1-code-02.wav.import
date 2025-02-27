@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://crk8msk8eykf6"
-path="res://.godot/imported/rav-try1-code-02.wav-365dd9df1076cd25272b7c2db26771a5.sample"
+uid="uid://bgbee2e1imcnx"
+path="res://.godot/imported/rav-try1-code-02.wav-9681b1507ec4f9b6afbbabe2ef43d416.sample"
 
 [deps]
 
-source_file="res://assets/audio/Rävioli Lines/Rav - Player First Try/rav-try1-code-02.wav"
-dest_files=["res://.godot/imported/rav-try1-code-02.wav-365dd9df1076cd25272b7c2db26771a5.sample"]
+source_file="res://assets/audio/Rävioli Lines/Rav - Player First Try/rav-try1-code-02.wav"
+dest_files=["res://.godot/imported/rav-try1-code-02.wav-9681b1507ec4f9b6afbbabe2ef43d416.sample"]
 
 [params]
 

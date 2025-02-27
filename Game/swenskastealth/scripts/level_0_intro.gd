@@ -31,13 +31,6 @@ func _get_next_dialog():
 			_play_audio(new_dialog["audio"])
 		else:
 			print("No audio found for this dialog.")
-	else:
-		if current_dialog_id == dialogs.size() - 1: # End of part 1
-			print("End of dialogs reached. Loading next part.")
-			dialogs = _load_json("res://dialogs/level-0-intro-after-dictionary.json")
-			current_dialog_id = dialog_starting_index
-			emit_signal("show_dictionary")
-			_get_next_dialog()
 
 func _on_dialog_continue_button_pressed():
 	print("Continue button pressed.")

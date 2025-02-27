@@ -19,19 +19,13 @@
 	},
 	{
 		"category": "mission",
-		"message": "Svampar are everywhere.  In the forest, in the foxholes, and apparently even in our safehouse!",
-		"continue_button_text": "Continue",
+		"message": "Svampar are everywhere.  In the forest, in the foxholes, and apparently even in our safehouse!  It would help a lot if you found more svampar.  What do you say?",
+		"continue_button_text": "Ja!",
 		"audio": "res://assets/audio/Mentor - Mushroom Mission/mentor-mm-13-request.wav"
 	},
 	{
 		"category": "mission",
-		"message": "Your first mission will be to find more svampar.  What do you say?",
-		"continue_button_text": "Ja!",
-		"audio": ""
-	},
-	{
-		"category": "mission",
-		"message": "Tack!  With more svampar, we can upgrade our safehouse.  But they’re all outside. You need to find them.",
+		"message": "Tack!  With more svampar, we can upgrade our safehouse.  But they’re all outside.",
 		"continue_button_text": null,
 		"audio": "res://assets/audio/Mentor - Mushroom Mission/mentor-mm-14-tack.wav"
 	}
