@@ -35,10 +35,10 @@ anchor_left = 0.464
 anchor_top = 0.063
 anchor_right = 0.464
 anchor_bottom = 0.063
-offset_left = -30.0079
-offset_top = 54.211
-offset_right = 89.9921
-offset_bottom = 174.211
+offset_left = -36.576
+offset_top = 27.328
+offset_right = 83.424
+offset_bottom = 147.328
 grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_2n0kx")
@@ -88,11 +88,23 @@ layout_mode = 2
 texture_normal = ExtResource("4_lomfy")
 stretch_mode = 4
 
+[node name="BrownMushroomCounter" type="Label" parent="Control/MushroomsCounter"]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
 [node name="PurpleMushroom" type="TextureButton" parent="Control/MushroomsCounter"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture_normal = ExtResource("4_j4ljt")
 stretch_mode = 4
+
+[node name="PurpleMushroomCounter" type="Label" parent="Control/MushroomsCounter"]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
 
 [node name="RedWhiteMushroom" type="TextureButton" parent="Control/MushroomsCounter"]
 custom_minimum_size = Vector2(40, 40)
@@ -100,3 +112,9 @@ layout_direction = 3
 layout_mode = 2
 texture_normal = ExtResource("5_ovdx0")
 stretch_mode = 4
+
+[node name="RedWhiteMushroomCounter" type="Label" parent="Control/MushroomsCounter"]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
