@@ -1,0 +1,38 @@
+[
+	{
+		"message": "Hej, you’re finally awake.  Välkommen till Sverige.",
+		"continue_button_text": "Sverige?"
+	},
+	{
+		"message": "Ja, välkommen till Sverige.  Welcome to Sweden!  Are you ready?",
+		"continue_button_text": "I’m ready!"
+	},
+	{
+		"message": "That’s the spirit!  Your first mission will teach you a lot...",
+		"continue_button_text": "Continue"
+	},
+	{
+		"message": "As your trusted mentor, I’ll  make sure you have all the tools you need, starting with this one:",
+		"continue_button_text": "Receive tool"
+	},
+	{
+		"message": "Our espionage may require some new words.  When you hear a new word, it will added to your dictionary.",
+		"continue_button_text": "Got it"
+	},
+	{
+		"message": "Are you ready to start? The mafia foxes have completely destroyed this forest...",
+		"continue_button_text": "Continue"
+	},
+	{
+		"message": "The forest is devoid of magic and full of crime…well, their crimes.  Not our crimes, yet...",
+		"continue_button_text": "Continue"
+	},
+	{
+		"message": "Our crimes will bring this forest back to life...but wait, you have only just arrived in Sverige...",
+		"continue_button_text": "Continue"
+	},
+	{
+		"message": "I’ll let you explore our safe house before giving you a task.",
+		"continue_button_text": null,
+	}
+]
