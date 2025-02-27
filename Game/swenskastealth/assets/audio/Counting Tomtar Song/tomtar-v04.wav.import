@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nd4dkegl6bgu"
+path="res://.godot/imported/tomtar-v04.wav-15e76dc95d6d13b8fb2b08b9e828e0c8.sample"
+
+[deps]
+
+source_file="res://assets/audio/Counting Tomtar Song/tomtar-v04.wav"
+dest_files=["res://.godot/imported/tomtar-v04.wav-15e76dc95d6d13b8fb2b08b9e828e0c8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

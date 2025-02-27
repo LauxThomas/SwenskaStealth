@@ -8,10 +8,25 @@ var moving_horizontally = true
 var talking = false  
 var moving = false  
 
+# Dictionary to track different types of mushrooms
+var mushrooms_collected = {
+	"Yellow": 0,
+	"Red": 0,
+	"Purple": 0
+}
+
+# Required mushroom counts
+const REQUIRED_MUSHROOMS = {
+	"Yellow": 10,
+	"Purple": 7,
+	"Red": 4
+}
+
 @onready var sprite = $Sprite2D
 @onready var target_marker = get_parent().find_child("TargetMarker")  
 
 func _ready():
+	print("Player initialized. Mushrooms collected: ", mushrooms_collected)
 	_stop_movement()
 	if target_marker:
 		target_marker.hide()  # Initially hide the marker
@@ -89,3 +104,21 @@ func _on_level_0__intro_start_dialog():
 
 func _on_level_1__mushrooms_mission_stop_talking():
 	talking = false
+	
+func collect_mushroom(amount: int, name: String):
+	if name in mushrooms_collected:
+		mushrooms_collected[name] += amount
+		print(name, "Mushroom collected! Total:", mushrooms_collected[name])
+		
+		# Check if all mushrooms are collected
+		if check_all_mushrooms_collected():
+			print("Yey! All required mushrooms have been collected!")
+	else:
+		print("Unknown mushroom type:", name)
+		
+		
+func check_all_mushrooms_collected() -> bool:
+	for mushroom in REQUIRED_MUSHROOMS.keys():
+		if mushrooms_collected[mushroom] < REQUIRED_MUSHROOMS[mushroom]:
+			return false  # Missing mushrooms
+	return true  # All required mushrooms are collected

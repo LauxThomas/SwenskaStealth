@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://5x4hdyn5lldj"]
+
+[ext_resource type="PackedScene" uid="uid://cibo4uenm62qb" path="res://scenes/mushroom.tscn" id="1_xwe4j"]
+[ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="2_yai3v"]
+
+[node name="Mushroom Purple" instance=ExtResource("1_xwe4j")]
+mushroom_type = "Purple"
+mushroom_audio = "res://assets/audio/Player - Mushroom Mission/player-5-blue.wav"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_yai3v")

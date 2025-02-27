@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgh40sl2it08k"
+path="res://.godot/imported/mentor-st-excited.wav-da73aa46854919ae3fc0be94da6e4c8a.sample"
+
+[deps]
+
+source_file="res://assets/audio/Player - Stealth Mission/mentor-st-excited.wav"
+dest_files=["res://.godot/imported/mentor-st-excited.wav-da73aa46854919ae3fc0be94da6e4c8a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

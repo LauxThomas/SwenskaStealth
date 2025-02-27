@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfbems1a8e31w"
+path="res://.godot/imported/mentor-q-popquiz10.wav-499073101cb63c41cc7fecd878839e43.sample"
+
+[deps]
+
+source_file="res://assets/audio/Mentor - Generic + Questions/mentor-q-popquiz10.wav"
+dest_files=["res://.godot/imported/mentor-q-popquiz10.wav-499073101cb63c41cc7fecd878839e43.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

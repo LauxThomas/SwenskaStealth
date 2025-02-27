@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ccyahbmpm6o8s"
+path="res://.godot/imported/player-gen-what-now.wav-688fe43cfae745186c22e2be266c1728.sample"
+
+[deps]
+
+source_file="res://assets/audio/Player - Generic/player-gen-what-now.wav"
+dest_files=["res://.godot/imported/player-gen-what-now.wav-688fe43cfae745186c22e2be266c1728.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
