@@ -5,6 +5,7 @@
 
 [node name="Mushroom Purple" instance=ExtResource("1_xwe4j")]
 mushroom_type = "Purple"
+mushroom_audio = "res://assets/audio/Player - Mushroom Mission/player-5-blue.wav"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_yai3v")
