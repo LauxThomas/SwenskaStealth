@@ -89,7 +89,6 @@ func _is_mission_dialog(dictionary):
 	else:
 		return false
 
-
 func _on_mentor_character_talking() -> void:
 	_get_next_dialog()
 
@@ -110,4 +109,3 @@ func _activate_mushrooms(activate: bool):
 		print("✅ Mushrooms", "activated" if activate else "deactivated")
 	else:
 		print("❌ Target node for mushrooms not found!")
-
