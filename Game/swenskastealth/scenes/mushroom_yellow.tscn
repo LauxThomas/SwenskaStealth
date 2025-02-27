@@ -3,5 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://cibo4uenm62qb" path="res://scenes/mushroom.tscn" id="1_fqtdw"]
 
 [node name="Mushroom Yellow" instance=ExtResource("1_fqtdw")]
-mushroom_type = "Yellow"
-mushroom_audio = "res://assets/audio/Player - Mushroom Mission/player-4-yellow.wav"
+mushroom_type = "yellow"

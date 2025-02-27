@@ -6,31 +6,39 @@ signal start_dialog()
 signal close_dialog()
 signal stop_talking()
 signal show_mushrooms()
+
 @onready var dialogs = _load_json("res://dialogs/level-1-mushrooms-mission.json")
 @onready var audio_player = $AudioStreamPlayer 
+@onready var mushrooms_node = $"Mushrooms Parent"  
+
+
 var mission_instructions: Array
 var current_dialog_id = -1
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	if dialogs.is_empty():
-		print("failed to load dialogs")
+		print("Failed to load dialogs")
 		return
+
 	mission_instructions = dialogs.filter(_is_mission_dialog)
 	#_get_next_dialog()
 	emit_signal("show_dictionary")
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+
+	# ✅ Ensure mushrooms are hidden at the start
+	_activate_mushrooms(false)
+
+	# ✅ Connect the signal to activate mushrooms later
+	connect("show_mushrooms", Callable(self, "_activate_mushrooms").bind(true))
 
 func _get_next_dialog():
-	if current_dialog_id < dialogs.size()-1:
+	if current_dialog_id < dialogs.size() - 1:
 		current_dialog_id += 1
 		var new_dialog = dialogs[current_dialog_id]
 		print(new_dialog)
 		emit_signal("update_dialog", new_dialog)
+
 		_reproduce(new_dialog)
-		if current_dialog_id == dialogs.size()-1: # mission has been explained
+		if current_dialog_id == dialogs.size() - 1:  # Mission has been explained
 			emit_signal("show_mushrooms")
 
 func _on_dialog_continue_button_pressed():
@@ -81,5 +89,25 @@ func _is_mission_dialog(dictionary):
 	else:
 		return false
 
+
 func _on_mentor_character_talking() -> void:
 	_get_next_dialog()
+
+# Show or hide the entire mushroom group (parent and children)
+func _activate_mushrooms(activate: bool):
+	if mushrooms_node:
+		mushrooms_node.visible = activate  # Show or hide all mushrooms
+		mushrooms_node.set_process(activate)  # Enable/disable parent scripts
+
+		# Loop through all children and disable their interactions
+		for child in mushrooms_node.get_children():
+			if child is Area2D:  # Ensure only Area2D nodes are affected
+				child.set_process(activate)  # Enable/disable script processing
+				child.set_physics_process(activate)  # Enable/disable physics interactions
+				child.monitoring = activate  # Enable/disable collision detection
+				child.visible = activate  # Hide/show the actual object
+
+		print("✅ Mushrooms", "activated" if activate else "deactivated")
+	else:
+		print("❌ Target node for mushrooms not found!")
+
