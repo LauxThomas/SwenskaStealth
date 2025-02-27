@@ -68,3 +68,7 @@ func _play_audio(audio_path: String) -> void:
 			print("Failed to load audio stream:", audio_path)
 	else:
 		print("Audio file not found:", audio_path)
+
+
+func _on_mentor_character_talking() -> void:
+	_get_next_dialog()
