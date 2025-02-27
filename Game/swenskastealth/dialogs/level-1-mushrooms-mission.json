@@ -1,6 +1,32 @@
 [
 	{
+		"category": "default",
 		"message": "Have a look around.  I know it isn’t much, but we’ll fix it up.",
 		"continue_button_text": null,
+	},
+	{
+		"category": "mission",
+		"message": "Do you know what that is?",
+		"continue_button_text": "En svamp"
+	},
+	{
+		"category": "mission",
+		"message": "Right!  En svamp is a mushroom.",
+		"continue_button_text": "Continue"
+	},
+	{
+		"category": "mission",
+		"message": "Svampar are everywhere.  In the forest, in the foxholes, and apparently even in our safehouse!",
+		"continue_button_text": "Continue"
+	},
+	{
+		"category": "mission",
+		"message": "Your first mission will be to find more svampar.  What do you say?",
+		"continue_button_text": "Ja!"
+	},
+	{
+		"category": "mission",
+		"message": "Tack!  With more svampar, we can upgrade our safehouse.  But they’re all outside. You need to find them.",
+		"continue_button_text": null
 	}
 ]
