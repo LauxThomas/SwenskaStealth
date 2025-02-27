@@ -1,6 +1,7 @@
 extends Node2D
 
 signal update_dialog(dialog)
+signal show_dictionary()
 signal start_dialog()
 signal close_dialog()
 signal stop_talking()
@@ -14,6 +15,8 @@ func _ready() -> void:
 		return
 	mission_instructions = dialogs.filter(_is_mission_dialog)
 	_get_next_dialog()
+	emit_signal("show_dictionary")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
