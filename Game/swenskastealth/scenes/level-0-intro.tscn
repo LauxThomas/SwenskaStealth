@@ -325,6 +325,8 @@ texture = ExtResource("10_bp63x")
 position = Vector2(334, 513)
 texture = ExtResource("11_vi15s")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="close_dialog" from="." to="Dialog" method="_on_close_dialog"]
 [connection signal="show_dictionary" from="." to="Toolbar" method="_on_show_dictionary"]
 [connection signal="start_dialog" from="." to="Dialog" method="_on_start_dialog"]

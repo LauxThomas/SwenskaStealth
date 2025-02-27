@@ -1,7 +1,8 @@
 [
 	{
 		"message": "Hej, you’re finally awake.  Välkommen till Sverige.",
-		"continue_button_text": "Sverige?"
+		"continue_button_text": "Sverige?",
+		"audio" : "res://assets/audio/Mentor - Intro/mentor-intro-01-valkommen.wav"
 	},
 	{
 		"message": "Ja, välkommen till Sverige.  Welcome to Sweden!  Are you ready?",
