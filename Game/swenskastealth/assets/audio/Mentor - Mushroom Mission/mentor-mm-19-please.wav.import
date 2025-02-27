@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btp8qvpy2anpr"
+path="res://.godot/imported/mentor-mm-19-please.wav-49c84622daf67a7de5e978ec3ed5f546.sample"
+
+[deps]
+
+source_file="res://assets/audio/Mentor - Mushroom Mission/mentor-mm-19-please.wav"
+dest_files=["res://.godot/imported/mentor-mm-19-please.wav-49c84622daf67a7de5e978ec3ed5f546.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

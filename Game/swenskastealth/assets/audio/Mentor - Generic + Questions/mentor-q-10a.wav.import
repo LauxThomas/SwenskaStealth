@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ck635cxq8tcxv"
+path="res://.godot/imported/mentor-q-10a.wav-33be650341ff0d860faff84e0c75e435.sample"
+
+[deps]
+
+source_file="res://assets/audio/Mentor - Generic + Questions/mentor-q-10a.wav"
+dest_files=["res://.godot/imported/mentor-q-10a.wav-33be650341ff0d860faff84e0c75e435.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

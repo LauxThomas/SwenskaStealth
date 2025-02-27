@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0tauexlr0ibe"
+path="res://.godot/imported/rav-try1-angry-05.wav-a8fe7b5f6bc52cd31d6d1827c28b534c.sample"
+
+[deps]
+
+source_file="res://assets/audio/Rävioli Lines/Rav - Player First Try/rav-try1-angry-05.wav"
+dest_files=["res://.godot/imported/rav-try1-angry-05.wav-a8fe7b5f6bc52cd31d6d1827c28b534c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

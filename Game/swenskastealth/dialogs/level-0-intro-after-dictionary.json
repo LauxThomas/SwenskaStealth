@@ -1,19 +1,23 @@
 [
 	{
 		"message": "Our espionage may require some new words.  When you hear a new word, it will added to your dictionary.",
-		"continue_button_text": "Got it"
+		"continue_button_text": "Got it",
+		"audio": "res://assets/audio/Mentor - Intro/mentor-intro-06-dict2.wav"
 	},
 	{
 		"message": "Are you ready to start? The mafia foxes have completely destroyed this forest...",
-		"continue_button_text": "Continue"
+		"continue_button_text": "Continue",
+		"audio": "res://assets/audio/Mentor - Intro/mentor-intro-07-explain.wav"
 	},
 	{
 		"message": "The forest is devoid of magic and full of crime…well, their crimes.  Not our crimes, yet...",
-		"continue_button_text": "Continue"
+		"continue_button_text": "Continue",
+		"audio": "res://assets/audio/Mentor - Intro/mentor-intro-08-look.wav"
 	},
 	{
 		"message": "Our crimes will bring this forest back to life...but wait, you have only just arrived in Sverige...",
-		"continue_button_text": "Continue"
+		"continue_button_text": "Continue",
+		"audio": "res://assets/audio/Mentor - Intro/mentor-intro-09-stanna.wav"
 	},
 	{
 		"message": "I’ll let you get your bearings in our safe house before giving you a task.",

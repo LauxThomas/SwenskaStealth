@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3qowap7q631h"
+path="res://.godot/imported/rav-try99-potato-08.wav-644c9e455ac1601698cf236a13a6bc9f.sample"
+
+[deps]
+
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-potato-08.wav"
+dest_files=["res://.godot/imported/rav-try99-potato-08.wav-644c9e455ac1601698cf236a13a6bc9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
