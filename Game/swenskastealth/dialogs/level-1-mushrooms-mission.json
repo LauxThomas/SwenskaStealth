@@ -3,30 +3,36 @@
 		"category": "default",
 		"message": "Have a look around.  I know it isn’t much, but we’ll fix it up.",
 		"continue_button_text": null,
+		"audio": "res://assets/audio/Mentor - Intro/mentor-intro-08-look.wav"
 	},
 	{
 		"category": "mission",
 		"message": "Do you know what that is?",
-		"continue_button_text": "En svamp"
+		"continue_button_text": "En svamp",
+		"audio": "res://assets/audio/Mentor - Mushroom Mission/mentor-mm-10-question.wav"
 	},
 	{
 		"category": "mission",
 		"message": "Right!  En svamp is a mushroom.",
-		"continue_button_text": "Continue"
+		"continue_button_text": "Continue",
+		"audio": "res://assets/audio/Mentor - Mushroom Mission/mentor-mm-11-right.wav"
 	},
 	{
 		"category": "mission",
 		"message": "Svampar are everywhere.  In the forest, in the foxholes, and apparently even in our safehouse!",
-		"continue_button_text": "Continue"
+		"continue_button_text": "Continue",
+		"audio": "res://assets/audio/Mentor - Mushroom Mission/mentor-mm-13-request.wav"
 	},
 	{
 		"category": "mission",
 		"message": "Your first mission will be to find more svampar.  What do you say?",
-		"continue_button_text": "Ja!"
+		"continue_button_text": "Ja!",
+		"audio": ""
 	},
 	{
 		"category": "mission",
 		"message": "Tack!  With more svampar, we can upgrade our safehouse.  But they’re all outside. You need to find them.",
-		"continue_button_text": null
+		"continue_button_text": null,
+		"audio": "res://assets/audio/Mentor - Mushroom Mission/mentor-mm-14-tack.wav"
 	}
 ]
