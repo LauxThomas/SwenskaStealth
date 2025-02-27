@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfar6rrwlkd11"
+path="res://.godot/imported/sven-try1-question1-02.wav-e95f313b9a53efa9cc6c10489772f986.sample"
+
+[deps]
+
+source_file="res://assets/audio/Sven Lines/Sven - Player First Try/sven-try1-question1-02.wav"
+dest_files=["res://.godot/imported/sven-try1-question1-02.wav-e95f313b9a53efa9cc6c10489772f986.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

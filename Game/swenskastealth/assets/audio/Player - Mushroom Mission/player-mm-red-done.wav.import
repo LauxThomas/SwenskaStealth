@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drdhxktwai6v6"
+path="res://.godot/imported/player-mm-red-done.wav-a6b9290383d27fcbf516325dbaf60e0c.sample"
+
+[deps]
+
+source_file="res://assets/audio/Player - Mushroom Mission/player-mm-red-done.wav"
+dest_files=["res://.godot/imported/player-mm-red-done.wav-a6b9290383d27fcbf516325dbaf60e0c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

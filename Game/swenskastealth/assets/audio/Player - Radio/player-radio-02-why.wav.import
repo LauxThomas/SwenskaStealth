@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br6i72cwpg7g5"
+path="res://.godot/imported/player-radio-02-why.wav-81f6017c630e352f813a393c42d9a22c.sample"
+
+[deps]
+
+source_file="res://assets/audio/Player - Radio/player-radio-02-why.wav"
+dest_files=["res://.godot/imported/player-radio-02-why.wav-81f6017c630e352f813a393c42d9a22c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

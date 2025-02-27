@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://x8yd71ok6tij"
+path="res://.godot/imported/player-gen-nej-notyet.wav-9747f788f88424b5d79a19c856228013.sample"
+
+[deps]
+
+source_file="res://assets/audio/Player - Generic/player-gen-nej-notyet.wav"
+dest_files=["res://.godot/imported/player-gen-nej-notyet.wav-9747f788f88424b5d79a19c856228013.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
