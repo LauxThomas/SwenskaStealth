@@ -301,7 +301,7 @@ shape = SubResource("RectangleShape2D_g4mm1")
 
 [node name="mushroom1" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-769, 1315)
+position = Vector2(383, 503)
 texture = ExtResource("8_lqcin")
 
 [node name="tree" type="Sprite2D" parent="."]
@@ -310,11 +310,12 @@ scale = Vector2(5.07813, 4.82813)
 texture = ExtResource("9_kd2qv")
 
 [node name="mushroom2" type="Sprite2D" parent="."]
-position = Vector2(-657, 1320)
+position = Vector2(352, 478)
+scale = Vector2(1.15625, 1)
 texture = ExtResource("10_bp63x")
 
 [node name="mushroom3" type="Sprite2D" parent="."]
-position = Vector2(-574, 1326)
+position = Vector2(334, 513)
 texture = ExtResource("11_vi15s")
 
 [node name="Toolbar" parent="." instance=ExtResource("12_s38c4")]
