@@ -62,6 +62,7 @@ func _load_json(path):
 func _on_first_dialog_trigger_body_entered(body):
 	#print("body entered trigger")
 	emit_signal("start_dialog")
+	_get_next_dialog()
 
 func _on_dialog_box_ignored():
 	if current_dialog_id == dialogs.size()-1: #End of level is reached
