@@ -5,6 +5,7 @@ signal show_dictionary()
 signal start_dialog()
 signal close_dialog()
 signal stop_talking()
+signal show_mushrooms()
 @onready var dialogs = _load_json("res://dialogs/level-1-mushrooms-mission.json")
 var mission_instructions: Array
 var current_dialog_id = -1
@@ -28,7 +29,7 @@ func _get_next_dialog():
 		print(new_dialog)
 		emit_signal("update_dialog", new_dialog)
 		if current_dialog_id == dialogs.size()-1: # mission has been explained
-			print("show_mushrooms")
+			emit_signal("show_mushrooms")
 
 func _on_dialog_continue_button_pressed():
 	_get_next_dialog()

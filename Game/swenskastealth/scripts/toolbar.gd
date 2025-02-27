@@ -10,3 +10,7 @@ func _ready() -> void:
 
 func _on_show_dictionary():
 	dictionary.show()
+
+
+func _on_show_mushrooms() -> void:
+	mushroom_counter.show()
