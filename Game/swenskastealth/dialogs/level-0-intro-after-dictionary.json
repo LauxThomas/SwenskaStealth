@@ -16,7 +16,7 @@
 		"continue_button_text": "Continue"
 	},
 	{
-		"message": "I’ll let you get your bearings in our safe house before giving you a task.",
-		"continue_button_text": null
+		"message": "I’ll let you explore our safe house before giving you a task.",
+		"continue_button_text": null,
 	}
 ]
