@@ -1,0 +1,339 @@
+[gd_scene load_steps=17 format=3 uid="uid://dpfexunplrnj0"]
+
+[ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
+[ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
+[ext_resource type="PackedScene" uid="uid://dvwth5bf67ib8" path="res://scenes/dialog.tscn" id="3_6chjl"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="4_d7i01"]
+[ext_resource type="PackedScene" uid="uid://bdg3o0svqldd0" path="res://scenes/toolbar.tscn" id="5_rxwhy"]
+[ext_resource type="Script" path="res://scripts/toolbar.gd" id="6_73awq"]
+[ext_resource type="PackedScene" uid="uid://bc3g5ueltykrq" path="res://scenes/non-player-character.tscn" id="7_hpbmx"]
+[ext_resource type="Script" path="res://scripts/non_player_character.gd" id="8_86mct"]
+[ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="9_y581m"]
+[ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="10_nubpc"]
+[ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="11_v0npn"]
+[ext_resource type="Texture2D" uid="uid://di0w36fte6vju" path="res://assets/objects/tree.png" id="12_ra5em"]
+[ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="13_77ipa"]
+[ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/mushroom_red_white.png" id="14_fdk5y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
+radius = 135.0
+height = 330.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4mm1"]
+size = Vector2(1015, 20)
+
+[node name="Level 1 - Mushrooms Mission" type="Node2D"]
+script = ExtResource("1_kny8f")
+
+[node name="ForestBackground" type="Sprite2D" parent="."]
+position = Vector2(-1667, -238)
+texture = ExtResource("2_4govx")
+
+[node name="Dialog" parent="." instance=ExtResource("3_6chjl")]
+script = ExtResource("4_d7i01")
+
+[node name="Toolbar" parent="." instance=ExtResource("5_rxwhy")]
+script = ExtResource("6_73awq")
+
+[node name="Mentor" parent="." instance=ExtResource("7_hpbmx")]
+z_index = 2
+position = Vector2(192, 143)
+script = ExtResource("8_86mct")
+
+[node name="Raccoon" parent="." instance=ExtResource("9_y581m")]
+z_index = 2
+
+[node name="TargetMarker" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("10_nubpc")
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+z_index = 2
+position = Vector2(-904, -109)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(272, 969)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(215, 607)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(390, 597)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(552, 724)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(704, 781)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(853, 851)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(551, 626)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(462, 451)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(452, 251)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(496, -6)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(617, -203)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(782, -320)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(960, -364)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1131, -367)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1287, -323)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1420, -263)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1525, -184)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1630, -76)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1719, 89)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1719, 89)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(106, 154)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(106, -63)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(373, -166)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(448, -276)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(648, -347)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(755, -522)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1019, -529)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1261, -654)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1571, -529)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1379, -447)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1792, -500)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1959, -304)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(2041, -122)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(2062, 28)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1694, 580)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(112, 408)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(624, 1104)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1347, 1028)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1770, 776)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D47" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(2336, 107)
+rotation = 0.998701
+scale = Vector2(0.851719, 0.54716)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(2061, 253)
+rotation = 0.998701
+scale = Vector2(0.851719, 0.54716)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1903, 338)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1789, 319)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1732, 519)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D43" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1602, 668)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D44" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1450, 732)
+rotation = 1.09674
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D45" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1263, 786)
+rotation = 1.09674
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="Collisions"]
+z_index = 2
+position = Vector2(1183, 763)
+rotation = -2.79998
+scale = Vector2(1, 0.304239)
+shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="FirstDialogTrigger" type="Area2D" parent="."]
+position = Vector2(194, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstDialogTrigger"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_g4mm1")
+
+[node name="mushroom1" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(383, 503)
+texture = ExtResource("11_v0npn")
+
+[node name="tree" type="Sprite2D" parent="."]
+position = Vector2(-729, 557)
+scale = Vector2(5.07813, 4.82813)
+texture = ExtResource("12_ra5em")
+
+[node name="mushroom2" type="Sprite2D" parent="."]
+position = Vector2(352, 478)
+scale = Vector2(1.15625, 1)
+texture = ExtResource("13_77ipa")
+
+[node name="mushroom3" type="Sprite2D" parent="."]
+position = Vector2(334, 513)
+texture = ExtResource("14_fdk5y")
+
+[connection signal="close_dialog" from="." to="Dialog" method="_on_level_0__intro_close_dialog"]
+[connection signal="show_dictionary" from="." to="Toolbar" method="_on_level_0__intro_show_dictionary"]
+[connection signal="start_dialog" from="." to="Dialog" method="_on_level_0__intro_start_dialog"]
+[connection signal="start_dialog" from="." to="Mentor" method="_on_level_0__intro_start_dialog"]
+[connection signal="start_dialog" from="." to="Raccoon" method="_on_level_0__intro_start_dialog"]
+[connection signal="update_dialog" from="." to="Dialog" method="_on_level_0_intro_update_dialog"]
+[connection signal="box_ignored" from="Dialog" to="." method="_on_dialog_box_ignored"]
+[connection signal="continue_button_pressed" from="Dialog" to="." method="_on_dialog_continue_button_pressed"]
+[connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
+[connection signal="character_talking" from="Mentor" to="Raccoon" method="_on_mentor_character_talking"]
+[connection signal="player_position_updated" from="Raccoon" to="Mentor" method="_on_raccoon_player_position_updated"]
+[connection signal="body_entered" from="FirstDialogTrigger" to="." method="_on_first_dialog_trigger_body_entered"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs8cvrxb21nm6"]
+
+[ext_resource type="PackedScene" uid="uid://chvglrmu6cmld" path="res://scenes/level-0-intro.tscn" id="1_jm451"]
+
+[node name="Level Parent" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(523.2, 292)
+
+[node name="Level 0 - Intro" parent="." instance=ExtResource("1_jm451")]
