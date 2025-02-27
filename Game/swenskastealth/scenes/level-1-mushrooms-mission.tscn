@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dpfexunplrnj0"]
+[gd_scene load_steps=17 format=3 uid="uid://dpfexunplrnj0"]
 
 [ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="9_y581m"]
 [ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="10_nubpc"]
 [ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="11_v0npn"]
-[ext_resource type="Texture2D" uid="uid://di0w36fte6vju" path="res://assets/objects/tree.png" id="12_ra5em"]
 [ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="13_77ipa"]
 [ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/mushroom_red_white.png" id="14_fdk5y"]
 
@@ -306,27 +305,22 @@ shape = SubResource("CapsuleShape2D_l3g7x")
 position = Vector2(1264, 600.5)
 shape = SubResource("RectangleShape2D_a26bq")
 
-[node name="mushroom1" type="Sprite2D" parent="."]
+[node name="MissionTrigger" type="Area2D" parent="."]
+position = Vector2(361, 494)
+
+[node name="mushroom1" type="Sprite2D" parent="MissionTrigger"]
 z_index = 2
-position = Vector2(383, 503)
+position = Vector2(22, 9)
 texture = ExtResource("11_v0npn")
 
-[node name="tree" type="Sprite2D" parent="."]
-position = Vector2(-729, 557)
-scale = Vector2(5.07813, 4.82813)
-texture = ExtResource("12_ra5em")
-
-[node name="mushroom2" type="Sprite2D" parent="."]
-position = Vector2(352, 478)
+[node name="mushroom2" type="Sprite2D" parent="MissionTrigger"]
+position = Vector2(-9, -16)
 scale = Vector2(1.15625, 1)
 texture = ExtResource("13_77ipa")
 
-[node name="mushroom3" type="Sprite2D" parent="."]
-position = Vector2(334, 513)
+[node name="mushroom3" type="Sprite2D" parent="MissionTrigger"]
+position = Vector2(-27, 19)
 texture = ExtResource("14_fdk5y")
-
-[node name="MissionTrigger" type="Area2D" parent="."]
-position = Vector2(361, 494)
 
 [node name="MissionCollision" type="CollisionShape2D" parent="MissionTrigger"]
 position = Vector2(-5, -27)
