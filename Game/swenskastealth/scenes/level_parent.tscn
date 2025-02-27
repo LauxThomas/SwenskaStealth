@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs8cvrxb21nm6"]
+
+[ext_resource type="PackedScene" uid="uid://chvglrmu6cmld" path="res://scenes/level-0-intro.tscn" id="1_jm451"]
+[ext_resource type="Script" path="res://scripts/level_parent.gd" id="1_vcrni"]
+
+[node name="Level Parent" type="Node2D"]
+script = ExtResource("1_vcrni")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(523.2, 292)
+
+[node name="Level 0 - Intro" parent="." instance=ExtResource("1_jm451")]
+
+[connection signal="close_dialog" from="Level 0 - Intro" to="." method="_on_level_0__intro_close_dialog"]

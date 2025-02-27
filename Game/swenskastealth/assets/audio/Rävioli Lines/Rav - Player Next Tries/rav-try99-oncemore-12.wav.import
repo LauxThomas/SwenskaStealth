@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://511arrutmxn4"
+path="res://.godot/imported/rav-try99-oncemore-12.wav-3453c2eb1e9c34aed0a82b31fa56d196.sample"
+
+[deps]
+
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-oncemore-12.wav"
+dest_files=["res://.godot/imported/rav-try99-oncemore-12.wav-3453c2eb1e9c34aed0a82b31fa56d196.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

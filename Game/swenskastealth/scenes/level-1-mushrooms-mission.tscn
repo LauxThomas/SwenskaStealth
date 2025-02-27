@@ -1,51 +1,56 @@
-[gd_scene load_steps=17 format=3 uid="uid://chvglrmu6cmld"]
+[gd_scene load_steps=18 format=3 uid="uid://dpfexunplrnj0"]
 
-[ext_resource type="Script" path="res://scripts/level_0_intro.gd" id="1_opvsd"]
-[ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="2_7md7q"]
-[ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_vhq0g"]
-[ext_resource type="PackedScene" uid="uid://dvwth5bf67ib8" path="res://scenes/dialog.tscn" id="3_81ewv"]
-[ext_resource type="Script" path="res://scripts/dialog.gd" id="3_mefs3"]
-[ext_resource type="PackedScene" uid="uid://bc3g5ueltykrq" path="res://scenes/non-player-character.tscn" id="4_by8ap"]
-[ext_resource type="Script" path="res://scripts/non_player_character.gd" id="5_78ya6"]
-[ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="8_lqcin"]
-[ext_resource type="Texture2D" uid="uid://di0w36fte6vju" path="res://assets/objects/tree.png" id="9_kd2qv"]
-[ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="10_bp63x"]
-[ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/mushroom_red_white.png" id="11_vi15s"]
-[ext_resource type="PackedScene" uid="uid://bdg3o0svqldd0" path="res://scenes/toolbar.tscn" id="12_s38c4"]
-[ext_resource type="Script" path="res://scripts/toolbar.gd" id="13_any41"]
-[ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="15_j81ea"]
+[ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
+[ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
+[ext_resource type="PackedScene" uid="uid://dvwth5bf67ib8" path="res://scenes/dialog.tscn" id="3_6chjl"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="4_d7i01"]
+[ext_resource type="PackedScene" uid="uid://bdg3o0svqldd0" path="res://scenes/toolbar.tscn" id="5_rxwhy"]
+[ext_resource type="Script" path="res://scripts/toolbar.gd" id="6_73awq"]
+[ext_resource type="PackedScene" uid="uid://bc3g5ueltykrq" path="res://scenes/non-player-character.tscn" id="7_hpbmx"]
+[ext_resource type="Script" path="res://scripts/non_player_character.gd" id="8_86mct"]
+[ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="9_y581m"]
+[ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="10_nubpc"]
+[ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="11_v0npn"]
+[ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="13_77ipa"]
+[ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/mushroom_red_white.png" id="14_fdk5y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
 radius = 135.0
 height = 330.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4mm1"]
-size = Vector2(1015, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a26bq"]
+size = Vector2(92, 75)
 
-[node name="Level 0 - Intro" type="Node2D"]
-script = ExtResource("1_opvsd")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24g4c"]
+size = Vector2(110, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6mo"]
+size = Vector2(187, 121)
+
+[node name="Level 1 - Mushrooms Mission" type="Node2D"]
+script = ExtResource("1_kny8f")
 
 [node name="ForestBackground" type="Sprite2D" parent="."]
 position = Vector2(-1667, -238)
-texture = ExtResource("2_vhq0g")
+texture = ExtResource("2_4govx")
 
-[node name="Dialog" parent="." instance=ExtResource("3_81ewv")]
-script = ExtResource("3_mefs3")
+[node name="Dialog" parent="." instance=ExtResource("3_6chjl")]
+script = ExtResource("4_d7i01")
 
-[node name="Toolbar" parent="." instance=ExtResource("12_s38c4")]
-script = ExtResource("13_any41")
+[node name="Toolbar" parent="." instance=ExtResource("5_rxwhy")]
+script = ExtResource("6_73awq")
 
-[node name="Mentor" parent="." instance=ExtResource("4_by8ap")]
+[node name="Mentor" parent="." instance=ExtResource("7_hpbmx")]
 z_index = 2
 position = Vector2(192, 143)
-script = ExtResource("5_78ya6")
+script = ExtResource("8_86mct")
 
-[node name="Raccoon" parent="." instance=ExtResource("2_7md7q")]
+[node name="Raccoon" parent="." instance=ExtResource("9_y581m")]
 z_index = 2
 
 [node name="TargetMarker" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("15_j81ea")
+texture = ExtResource("10_nubpc")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 z_index = 2
@@ -282,7 +287,7 @@ shape = SubResource("CapsuleShape2D_l3g7x")
 
 [node name="CollisionShape2D44" type="CollisionShape2D" parent="Collisions"]
 z_index = 2
-position = Vector2(1450, 732)
+position = Vector2(1460, 733)
 rotation = 1.09674
 shape = SubResource("CapsuleShape2D_l3g7x")
 
@@ -299,44 +304,45 @@ rotation = -2.79998
 scale = Vector2(1, 0.304239)
 shape = SubResource("CapsuleShape2D_l3g7x")
 
-[node name="FirstDialogTrigger" type="Area2D" parent="."]
-position = Vector2(194, 95)
+[node name="MushroomsCollision" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(1264, 600.5)
+shape = SubResource("RectangleShape2D_a26bq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstDialogTrigger"]
-position = Vector2(-0.5, 3)
-shape = SubResource("RectangleShape2D_g4mm1")
+[node name="SafeHouseExit" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(988, 699)
+shape = SubResource("RectangleShape2D_24g4c")
 
-[node name="mushroom1" type="Sprite2D" parent="."]
+[node name="MissionTrigger" type="Area2D" parent="."]
+position = Vector2(361, 494)
+
+[node name="mushroom1" type="Sprite2D" parent="MissionTrigger"]
 z_index = 2
-position = Vector2(383, 503)
-texture = ExtResource("8_lqcin")
+position = Vector2(22, 9)
+texture = ExtResource("11_v0npn")
 
-[node name="tree" type="Sprite2D" parent="."]
-position = Vector2(-729, 557)
-scale = Vector2(5.07813, 4.82813)
-texture = ExtResource("9_kd2qv")
-
-[node name="mushroom2" type="Sprite2D" parent="."]
-position = Vector2(352, 478)
+[node name="mushroom2" type="Sprite2D" parent="MissionTrigger"]
+position = Vector2(-9, -16)
 scale = Vector2(1.15625, 1)
-texture = ExtResource("10_bp63x")
+texture = ExtResource("13_77ipa")
 
-[node name="mushroom3" type="Sprite2D" parent="."]
-position = Vector2(334, 513)
-texture = ExtResource("11_vi15s")
+[node name="mushroom3" type="Sprite2D" parent="MissionTrigger"]
+position = Vector2(-27, 19)
+texture = ExtResource("14_fdk5y")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MissionCollision" type="CollisionShape2D" parent="MissionTrigger"]
+position = Vector2(-5, -27)
+shape = SubResource("RectangleShape2D_kw6mo")
 
 [connection signal="close_dialog" from="." to="Dialog" method="_on_close_dialog"]
 [connection signal="show_dictionary" from="." to="Toolbar" method="_on_show_dictionary"]
 [connection signal="start_dialog" from="." to="Dialog" method="_on_start_dialog"]
 [connection signal="start_dialog" from="." to="Mentor" method="_on_level_0__intro_start_dialog"]
 [connection signal="start_dialog" from="." to="Raccoon" method="_on_level_0__intro_start_dialog"]
+[connection signal="stop_talking" from="." to="Raccoon" method="_on_level_1__mushrooms_mission_stop_talking"]
 [connection signal="update_dialog" from="." to="Dialog" method="_on_update_dialog"]
 [connection signal="box_ignored" from="Dialog" to="." method="_on_dialog_box_ignored"]
 [connection signal="continue_button_pressed" from="Dialog" to="." method="_on_dialog_continue_button_pressed"]
-[connection signal="character_talking" from="Mentor" to="." method="_on_mentor_character_talking"]
 [connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
 [connection signal="character_talking" from="Mentor" to="Raccoon" method="_on_mentor_character_talking"]
 [connection signal="player_position_updated" from="Raccoon" to="Mentor" method="_on_raccoon_player_position_updated"]
-[connection signal="body_entered" from="FirstDialogTrigger" to="." method="_on_first_dialog_trigger_body_entered"]
+[connection signal="body_entered" from="MissionTrigger" to="." method="_on_mission_trigger_body_entered"]

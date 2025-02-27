@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal box_closed #Notifies other nodes (like player, so it can continue moving)
+signal box_ignored #Notifies other nodes (like player, so it can continue moving)
 signal continue_button_pressed #Notifies other nodes (like level controller, so level decides next dialogue)"
 @onready var dialog_box =  $Control/Box
 @onready var dialog_box_message = $Control/Box/MarginContainer/Text
@@ -21,8 +21,8 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		mouse_position = dialog_box.get_global_mouse_position()
 		if dialog_box.visible and not dialog_box.get_global_rect().has_point(mouse_position):
-			dialog_box.hide()
-			emit_signal("box_closed")
+			#dialog_box.hide()
+			emit_signal("box_ignored")
 
 func _on_mentor_character_talking():
 	dialog_box.show()
@@ -35,7 +35,7 @@ func _on_continue_button_interaction(event):
 			emit_signal("continue_button_pressed")
 			click_count = 0
 
-func _on_level_0_intro_update_dialog(dialog):
+func _on_update_dialog(dialog):
 	if dialog.message:
 		dialog_box_message.text = dialog.message
 	if dialog.continue_button_text:
@@ -43,3 +43,9 @@ func _on_level_0_intro_update_dialog(dialog):
 		dialog_box_continue_button.show()
 	else:
 		dialog_box_continue_button.hide()
+
+func _on_start_dialog():
+	dialog_box.show()
+
+func _on_close_dialog():
+	dialog_box.hide()

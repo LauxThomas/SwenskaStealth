@@ -83,6 +83,9 @@ func _on_mentor_character_talking():
 	talking = true
 	_stop_movement()
 
-func _on_dialog_box_closed():
-	talking = false
+func _on_level_0__intro_start_dialog():
+	talking = true
 	_stop_movement()
+
+func _on_level_1__mushrooms_mission_stop_talking():
+	talking = false
