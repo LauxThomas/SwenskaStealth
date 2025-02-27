@@ -8,11 +8,11 @@
 		"continue_button_text": "I’m ready!"
 	},
 	{
-		"message": "That’s the spirit!  Your first mission will teach you a lot.",
+		"message": "That’s the spirit!  Your first mission will teach you a lot...",
 		"continue_button_text": "Continue"
 	},
 	{
-		"message": "As your trusted mentor, I’ll  make sure you have all the tools you need… starting with this one...",
-		"continue_button_text": null
+		"message": "As your trusted mentor, I’ll  make sure you have all the tools you need, starting with this one:",
+		"continue_button_text": "Receive tool"
 	}
 ]

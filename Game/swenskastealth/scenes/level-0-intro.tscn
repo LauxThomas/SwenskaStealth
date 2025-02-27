@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://chvglrmu6cmld"]
+[gd_scene load_steps=16 format=3 uid="uid://chvglrmu6cmld"]
 
 [ext_resource type="Script" path="res://scripts/level_0_intro.gd" id="1_opvsd"]
 [ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="2_7md7q"]
@@ -7,25 +7,17 @@
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="3_mefs3"]
 [ext_resource type="PackedScene" uid="uid://bc3g5ueltykrq" path="res://scenes/non-player-character.tscn" id="4_by8ap"]
 [ext_resource type="Script" path="res://scripts/non_player_character.gd" id="5_78ya6"]
-[ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/Chanterelles1.png" id="8_lqcin"]
-[ext_resource type="Texture2D" uid="uid://di0w36fte6vju" path="res://assets/objects/Tree3.png" id="9_kd2qv"]
-[ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/Icons_08.png" id="10_bp63x"]
-[ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/White-red_mushroom3.png" id="11_vi15s"]
-[ext_resource type="Texture2D" uid="uid://dtfwqkwc0v6sw" path="res://assets/objects/book_dictionary.png" id="12_xeio5"]
-[ext_resource type="Texture2D" uid="uid://b2emsr0sxom30" path="res://assets/objects/book_open.png" id="13_37tgk"]
-[ext_resource type="Script" path="res://scenes/bookbutton.gd" id="14_50nsk"]
+[ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="8_lqcin"]
+[ext_resource type="Texture2D" uid="uid://di0w36fte6vju" path="res://assets/objects/tree.png" id="9_kd2qv"]
+[ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="10_bp63x"]
+[ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/mushroom_red_white.png" id="11_vi15s"]
+[ext_resource type="PackedScene" uid="uid://bdg3o0svqldd0" path="res://scenes/toolbar.tscn" id="12_s38c4"]
+[ext_resource type="Script" path="res://scripts/toolbar.gd" id="13_any41"]
 [ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="15_j81ea"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
 radius = 135.0
 height = 330.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22rgh"]
-bg_color = Color(0.955963, 0.955963, 0.955963, 1)
-shadow_color = Color(0.423651, 0.423651, 0.423651, 0.6)
-
-[sub_resource type="LabelSettings" id="LabelSettings_d2pvo"]
-font_color = Color(0, 0, 0, 1)
 
 [node name="Level 0 - Intro" type="Node2D"]
 script = ExtResource("1_opvsd")
@@ -301,7 +293,7 @@ z_index = 2
 position = Vector2(-769, 1315)
 texture = ExtResource("8_lqcin")
 
-[node name="Tree3" type="Sprite2D" parent="."]
+[node name="tree" type="Sprite2D" parent="."]
 position = Vector2(-729, 557)
 scale = Vector2(5.07813, 4.82813)
 texture = ExtResource("9_kd2qv")
@@ -314,72 +306,14 @@ texture = ExtResource("10_bp63x")
 position = Vector2(-574, 1326)
 texture = ExtResource("11_vi15s")
 
-[node name="UI_layer" type="CanvasLayer" parent="."]
-
-[node name="UI_control" type="Control" parent="UI_layer"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="bookbutton" type="TextureButton" parent="UI_layer/UI_control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -558.0
-offset_top = 92.0
-offset_right = -87.0
-offset_bottom = 581.0
-grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("12_xeio5")
-texture_pressed = ExtResource("13_37tgk")
-texture_hover = ExtResource("13_37tgk")
-script = ExtResource("14_50nsk")
-
-[node name="dictionary_pannel" type="Panel" parent="UI_layer/UI_control"]
-visible = false
-layout_mode = 0
-offset_left = 359.0
-offset_top = 98.0
-offset_right = 399.0
-offset_bottom = 138.0
-scale = Vector2(4.895, 4.895)
-theme_override_styles/panel = SubResource("StyleBoxFlat_22rgh")
-
-[node name="dictionary_label" type="Label" parent="UI_layer/UI_control/dictionary_pannel"]
-layout_mode = 0
-offset_right = 198.0
-offset_bottom = 197.0
-scale = Vector2(0.2, 0.2)
-text = "Dictionary Entries:
-"
-label_settings = SubResource("LabelSettings_d2pvo")
-autowrap_mode = 2
-
-[node name="mushroombutton" type="TextureButton" parent="UI_layer/UI_control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -575.0
-offset_top = 401.0
-offset_right = -104.0
-offset_bottom = 890.0
-grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("8_lqcin")
-stretch_mode = 5
-script = ExtResource("14_50nsk")
+[node name="Toolbar" parent="." instance=ExtResource("12_s38c4")]
+script = ExtResource("13_any41")
 
 [node name="TargetMarker" type="Sprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("15_j81ea")
 
+[connection signal="show_dictionary" from="." to="Toolbar" method="_on_level_0__intro_show_dictionary"]
 [connection signal="update_dialog" from="." to="Dialog" method="_on_level_0_intro_update_dialog"]
 [connection signal="box_closed" from="Dialog" to="Raccoon" method="_on_dialog_box_closed"]
 [connection signal="continue_button_pressed" from="Dialog" to="." method="_on_dialog_continue_button_pressed"]

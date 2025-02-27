@@ -1,7 +1,8 @@
 extends Node2D
 
 signal update_dialog(dialog)
-@onready var dialogs = _load_json("res://dialogs/level-0-intro.json")
+signal show_dictionary()
+@onready var dialogs = _load_json("res://dialogs/level-0-intro-before-dictionary.json")
 var current_dialog_id = -1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,12 @@ func _get_next_dialog():
 		var new_dialog = dialogs[current_dialog_id]
 		print(new_dialog)
 		emit_signal("update_dialog", new_dialog)
+	else:
+		if current_dialog_id == dialogs.size()-1: #End of part 1 is reached
+			dialogs = _load_json("res://dialogs/level-0-intro-after-dictionary.json")
+			current_dialog_id = -1
+			emit_signal("show_dictionary")
+			_get_next_dialog()
 
 func _on_dialog_continue_button_pressed():
 	_get_next_dialog()
