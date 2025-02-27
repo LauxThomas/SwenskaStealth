@@ -6,7 +6,8 @@ signal show_dictionary()
 @onready var dialogs = _load_json("res://dialogs/level-0-intro-before-dictionary.json")
 @onready var audio_player = $AudioStreamPlayer 
 
-var current_dialog_id = -1
+var dialog_starting_index = -1
+var current_dialog_id = dialog_starting_index
 
 func _ready() -> void:
 	if dialogs.is_empty():
@@ -31,7 +32,7 @@ func _get_next_dialog():
 		if current_dialog_id == dialogs.size() - 1: # End of part 1
 			print("End of dialogs reached. Loading next part.")
 			dialogs = _load_json("res://dialogs/level-0-intro-after-dictionary.json")
-			current_dialog_id = -1
+			current_dialog_id = dialog_starting_index
 			emit_signal("show_dictionary")
 			_get_next_dialog()
 
