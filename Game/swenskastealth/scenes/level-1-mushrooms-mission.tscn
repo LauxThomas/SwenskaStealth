@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbxkqexd7o7dx"]
+[gd_scene load_steps=18 format=3 uid="uid://dpfexunplrnj0"]
 
 [ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]

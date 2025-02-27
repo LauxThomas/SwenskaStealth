@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cto7cjdfnjswr"
+path="res://.godot/imported/rav-try99-code-09.wav-64e2560e17969afa0377d6e860920ae3.sample"
+
+[deps]
+
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Next Tries/rav-try99-code-09.wav"
+dest_files=["res://.godot/imported/rav-try99-code-09.wav-64e2560e17969afa0377d6e860920ae3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

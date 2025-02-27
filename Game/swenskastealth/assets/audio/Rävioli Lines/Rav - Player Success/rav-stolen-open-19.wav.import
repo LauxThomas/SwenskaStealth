@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmtw3ucdgfejm"
+path="res://.godot/imported/rav-stolen-open-19.wav-d9f569f7a8e1523db0d9ed4bdd2e0347.sample"
+
+[deps]
+
+source_file="res://assets/audio/Rävioli Lines/Rav - Player Success/rav-stolen-open-19.wav"
+dest_files=["res://.godot/imported/rav-stolen-open-19.wav-d9f569f7a8e1523db0d9ed4bdd2e0347.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
