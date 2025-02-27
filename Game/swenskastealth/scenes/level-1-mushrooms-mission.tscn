@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dpfexunplrnj0"]
+[gd_scene load_steps=21 format=3 uid="uid://dpfexunplrnj0"]
 
 [ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
@@ -10,9 +10,12 @@
 [ext_resource type="Script" path="res://scripts/non_player_character.gd" id="8_86mct"]
 [ext_resource type="PackedScene" uid="uid://b866ddyv2cnxm" path="res://scenes/player.tscn" id="9_y581m"]
 [ext_resource type="Texture2D" uid="uid://jmo3vup7qgsb" path="res://assets/target.png" id="10_nubpc"]
+[ext_resource type="PackedScene" uid="uid://5x4hdyn5lldj" path="res://scenes/mushroom_purple.tscn" id="11_8lo8p"]
 [ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="11_v0npn"]
 [ext_resource type="Texture2D" uid="uid://crbchiufaaa5d" path="res://assets/objects/mushroom_purple.png" id="13_77ipa"]
 [ext_resource type="Texture2D" uid="uid://bcv27ma0hcxaf" path="res://assets/objects/mushroom_red_white.png" id="14_fdk5y"]
+[ext_resource type="PackedScene" uid="uid://d13vxkscm8lo2" path="res://scenes/mushroom_red.tscn" id="14_pjbu1"]
+[ext_resource type="PackedScene" uid="uid://ci0vux0smvb24" path="res://scenes/mushroom_yellow.tscn" id="16_s22k8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
 radius = 135.0
@@ -332,6 +335,69 @@ texture = ExtResource("14_fdk5y")
 [node name="MissionCollision" type="CollisionShape2D" parent="MissionTrigger"]
 position = Vector2(-5, -27)
 shape = SubResource("RectangleShape2D_kw6mo")
+
+[node name="Mushroom Red" parent="." instance=ExtResource("14_pjbu1")]
+position = Vector2(-231, 174)
+
+[node name="Mushroom Red2" parent="." instance=ExtResource("14_pjbu1")]
+position = Vector2(-125, 437)
+
+[node name="Mushroom Red3" parent="." instance=ExtResource("14_pjbu1")]
+position = Vector2(635, 318)
+
+[node name="Mushroom Red4" parent="." instance=ExtResource("14_pjbu1")]
+position = Vector2(601, 55)
+
+[node name="Mushroom Purple" parent="." instance=ExtResource("11_8lo8p")]
+position = Vector2(377, -183)
+
+[node name="Mushroom Purple2" parent="." instance=ExtResource("11_8lo8p")]
+position = Vector2(137, -234)
+
+[node name="Mushroom Purple3" parent="." instance=ExtResource("11_8lo8p")]
+position = Vector2(-218, 319)
+
+[node name="Mushroom Purple4" parent="." instance=ExtResource("11_8lo8p")]
+position = Vector2(26, 533)
+
+[node name="Mushroom Purple5" parent="." instance=ExtResource("11_8lo8p")]
+position = Vector2(547, 406)
+
+[node name="Mushroom Purple6" parent="." instance=ExtResource("11_8lo8p")]
+position = Vector2(-210, -17)
+
+[node name="Mushroom Purple7" parent="." instance=ExtResource("11_8lo8p")]
+position = Vector2(645, 184)
+
+[node name="Mushroom Yellow" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(-242, 67)
+
+[node name="Mushroom Yellow2" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(-129, -160)
+
+[node name="Mushroom Yellow3" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(265, -207)
+
+[node name="Mushroom Yellow4" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(424, 131)
+
+[node name="Mushroom Yellow5" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(494, -83)
+
+[node name="Mushroom Yellow6" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(-52, 493)
+
+[node name="Mushroom Yellow7" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(154, 440)
+
+[node name="Mushroom Yellow8" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(-123, 236)
+
+[node name="Mushroom Yellow9" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(354, 17)
+
+[node name="Mushroom Yellow10" parent="." instance=ExtResource("16_s22k8")]
+position = Vector2(162, -105)
 
 [connection signal="close_dialog" from="." to="Dialog" method="_on_close_dialog"]
 [connection signal="show_dictionary" from="." to="Toolbar" method="_on_show_dictionary"]

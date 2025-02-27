@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci0vux0smvb24"]
+
+[ext_resource type="PackedScene" uid="uid://cibo4uenm62qb" path="res://scenes/mushroom.tscn" id="1_fqtdw"]
+
+[node name="Mushroom Yellow" instance=ExtResource("1_fqtdw")]
+mushroom_type = "Yellow"
