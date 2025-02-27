@@ -27,6 +27,8 @@ func _get_next_dialog():
 		var new_dialog = dialogs[current_dialog_id]
 		print(new_dialog)
 		emit_signal("update_dialog", new_dialog)
+		if current_dialog_id == dialogs.size()-1: # mission has been explained
+			print("show_mushrooms")
 
 func _on_dialog_continue_button_pressed():
 	_get_next_dialog()
