@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dpfexunplrnj0"]
+[gd_scene load_steps=17 format=3 uid="uid://dpfexunplrnj0"]
 
 [ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
@@ -18,6 +18,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
 radius = 135.0
 height = 330.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a26bq"]
+size = Vector2(92, 75)
 
 [node name="Level 1 - Mushrooms Mission" type="Node2D"]
 script = ExtResource("1_kny8f")
@@ -295,6 +298,10 @@ position = Vector2(1183, 763)
 rotation = -2.79998
 scale = Vector2(1, 0.304239)
 shape = SubResource("CapsuleShape2D_l3g7x")
+
+[node name="MushroomsCollision" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(1264, 600.5)
+shape = SubResource("RectangleShape2D_a26bq")
 
 [node name="mushroom1" type="Sprite2D" parent="."]
 z_index = 2
