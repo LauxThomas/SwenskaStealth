@@ -32,6 +32,9 @@ texture = ExtResource("2_vhq0g")
 [node name="Dialog" parent="." instance=ExtResource("3_81ewv")]
 script = ExtResource("3_mefs3")
 
+[node name="Toolbar" parent="." instance=ExtResource("12_s38c4")]
+script = ExtResource("13_any41")
+
 [node name="Mentor" parent="." instance=ExtResource("4_by8ap")]
 z_index = 2
 position = Vector2(192, 143)
@@ -39,6 +42,10 @@ script = ExtResource("5_78ya6")
 
 [node name="Raccoon" parent="." instance=ExtResource("2_7md7q")]
 z_index = 2
+
+[node name="TargetMarker" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("15_j81ea")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 z_index = 2
@@ -317,13 +324,6 @@ texture = ExtResource("10_bp63x")
 [node name="mushroom3" type="Sprite2D" parent="."]
 position = Vector2(334, 513)
 texture = ExtResource("11_vi15s")
-
-[node name="Toolbar" parent="." instance=ExtResource("12_s38c4")]
-script = ExtResource("13_any41")
-
-[node name="TargetMarker" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("15_j81ea")
 
 [connection signal="close_dialog" from="." to="Dialog" method="_on_level_0__intro_close_dialog"]
 [connection signal="show_dictionary" from="." to="Toolbar" method="_on_level_0__intro_show_dictionary"]
