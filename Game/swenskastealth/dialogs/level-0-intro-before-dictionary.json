@@ -1,18 +1,22 @@
 [
 	{
 		"message": "Hej, you’re finally awake.  Välkommen till Sverige.",
-		"continue_button_text": "Sverige?"
+		"continue_button_text": "Sverige?",
+		"audio": "res://assets/audio/Counting Tomtar Song/tomtar-v01.wav"
 	},
 	{
 		"message": "Ja, välkommen till Sverige.  Welcome to Sweden!  Are you ready?",
-		"continue_button_text": "I’m ready!"
+		"continue_button_text": "I’m ready!",
+		"audio": "res://assets/audio/Counting Tomtar Song/tomtar-v01.wav"
 	},
 	{
 		"message": "That’s the spirit!  Your first mission will teach you a lot...",
-		"continue_button_text": "Continue"
+		"continue_button_text": "Continue",
+		"audio": "res://assets/audio/Counting Tomtar Song/tomtar-v01.wav"
 	},
 	{
 		"message": "As your trusted mentor, I’ll  make sure you have all the tools you need, starting with this one:",
-		"continue_button_text": "Receive tool"
+		"continue_button_text": "Receive tool",
+		"audio": "res://assets/audio/Counting Tomtar Song/tomtar-v01.wav"
 	}
 ]
