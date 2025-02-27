@@ -10,20 +10,22 @@ var moving = false
 
 # Dictionary to track different types of mushrooms
 var mushrooms_collected = {
-	"Yellow": 0,
-	"Red": 0,
-	"Purple": 0
+	"yellow": 0,
+	"red": 0,
+	"purple": 0
 }
 
 # Required mushroom counts
 const REQUIRED_MUSHROOMS = {
-	"Yellow": 10,
-	"Purple": 7,
-	"Red": 4
+	"yellow": 10,
+	"purple": 7,
+	"red": 4
 }
 
 @onready var sprite = $Sprite2D
 @onready var target_marker = get_parent().find_child("TargetMarker")  
+
+@onready var toolbar = get_tree().get_first_node_in_group("toolbar")  # Get the toolbar scene
 
 func _ready():
 	print("Player initialized. Mushrooms collected: ", mushrooms_collected)
@@ -105,17 +107,19 @@ func _on_level_0__intro_start_dialog():
 func _on_level_1__mushrooms_mission_stop_talking():
 	talking = false
 	
-func collect_mushroom(amount: int, name: String):
-	if name in mushrooms_collected:
-		mushrooms_collected[name] += amount
-		print(name, "Mushroom collected! Total:", mushrooms_collected[name])
-		
-		# Check if all mushrooms are collected
-		if check_all_mushrooms_collected():
-			print("Yey! All required mushrooms have been collected!")
+func collect_mushroom(amount: int, color: String):
+	if color in mushrooms_collected:
+		mushrooms_collected[color] += amount
+		print(color.capitalize(), "Mushroom collected! Total:", mushrooms_collected[color])
+
+		# Update the UI through the toolbar scene
+		if toolbar:
+			toolbar._on_update_mushrooms_counter(color, mushrooms_collected[color])
+		else:
+			print("❌ Toolbar not found! Ensure the toolbar scene is added to the scene tree.")
+
 	else:
-		print("Unknown mushroom type:", name)
-		
+		print("❌ Unknown mushroom type:", color)
 		
 func check_all_mushrooms_collected() -> bool:
 	for mushroom in REQUIRED_MUSHROOMS.keys():

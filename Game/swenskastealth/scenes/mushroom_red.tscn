@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cibo4uenm62qb" path="res://scenes/mushroom.tscn" id="1_jg6gf"]
 
 [node name="Mushroom Red" instance=ExtResource("1_jg6gf")]
-mushroom_type = "Red"
-mushroom_audio = "res://assets/audio/Player - Mushroom Mission/player-4-red.wav"
+mushroom_type = "red"
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("1_6jcyq")
