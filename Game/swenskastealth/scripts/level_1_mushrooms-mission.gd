@@ -1,9 +1,9 @@
 extends Node2D
 
 signal update_dialog(dialog)
-signal show_dictionary()
 signal start_dialog()
 signal close_dialog()
+signal stop_talking()
 @onready var dialogs = _load_json("res://dialogs/level-1-mushrooms-mission.json")
 var current_dialog_id = -1
 # Called when the node enters the scene tree for the first time.
@@ -21,8 +21,6 @@ func _process(_delta):
 func _get_next_dialog():
 	if current_dialog_id < dialogs.size()-1:
 		current_dialog_id += 1
-		if current_dialog_id == 4: #Mentor is talking about dictionary
-			emit_signal("show_dictionary")
 		var new_dialog = dialogs[current_dialog_id]
 		print(new_dialog)
 		emit_signal("update_dialog", new_dialog)
@@ -37,10 +35,6 @@ func _load_json(path):
 		return JSON.parse_string(content) if JSON.parse_string(content) else {}
 	return {}
 
-func _on_first_dialog_trigger_body_entered(body):
-	#print("body entered trigger")
-	emit_signal("start_dialog")
-
 func _on_dialog_box_ignored():
-	if current_dialog_id == dialogs.size()-1: #End of level is reached
-		emit_signal("close_dialog")
+	emit_signal("close_dialog")
+	emit_signal("stop_talking")

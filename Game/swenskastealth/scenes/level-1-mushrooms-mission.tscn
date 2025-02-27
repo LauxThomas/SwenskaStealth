@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dpfexunplrnj0"]
+[gd_scene load_steps=16 format=3 uid="uid://dpfexunplrnj0"]
 
 [ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
@@ -18,9 +18,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3g7x"]
 radius = 135.0
 height = 330.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4mm1"]
-size = Vector2(1015, 20)
 
 [node name="Level 1 - Mushrooms Mission" type="Node2D"]
 script = ExtResource("1_kny8f")
@@ -299,13 +296,6 @@ rotation = -2.79998
 scale = Vector2(1, 0.304239)
 shape = SubResource("CapsuleShape2D_l3g7x")
 
-[node name="FirstDialogTrigger" type="Area2D" parent="."]
-position = Vector2(194, 95)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstDialogTrigger"]
-position = Vector2(-0.5, 3)
-shape = SubResource("RectangleShape2D_g4mm1")
-
 [node name="mushroom1" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(383, 503)
@@ -326,14 +316,13 @@ position = Vector2(334, 513)
 texture = ExtResource("14_fdk5y")
 
 [connection signal="close_dialog" from="." to="Dialog" method="_on_level_0__intro_close_dialog"]
-[connection signal="show_dictionary" from="." to="Toolbar" method="_on_level_0__intro_show_dictionary"]
 [connection signal="start_dialog" from="." to="Dialog" method="_on_level_0__intro_start_dialog"]
 [connection signal="start_dialog" from="." to="Mentor" method="_on_level_0__intro_start_dialog"]
 [connection signal="start_dialog" from="." to="Raccoon" method="_on_level_0__intro_start_dialog"]
+[connection signal="stop_talking" from="." to="Raccoon" method="_on_level_1__mushrooms_mission_stop_talking"]
 [connection signal="update_dialog" from="." to="Dialog" method="_on_level_0_intro_update_dialog"]
 [connection signal="box_ignored" from="Dialog" to="." method="_on_dialog_box_ignored"]
 [connection signal="continue_button_pressed" from="Dialog" to="." method="_on_dialog_continue_button_pressed"]
 [connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
 [connection signal="character_talking" from="Mentor" to="Raccoon" method="_on_mentor_character_talking"]
 [connection signal="player_position_updated" from="Raccoon" to="Mentor" method="_on_raccoon_player_position_updated"]
-[connection signal="body_entered" from="FirstDialogTrigger" to="." method="_on_first_dialog_trigger_body_entered"]
