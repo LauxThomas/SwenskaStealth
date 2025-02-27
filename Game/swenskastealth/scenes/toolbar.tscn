@@ -1,46 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdg3o0svqldd0"]
+[gd_scene load_steps=6 format=3 uid="uid://bdg3o0svqldd0"]
 
 [ext_resource type="Texture2D" uid="uid://dtfwqkwc0v6sw" path="res://assets/objects/book_closed.png" id="1_2n0kx"]
 [ext_resource type="Texture2D" uid="uid://b2emsr0sxom30" path="res://assets/objects/book_open.png" id="2_ffmjj"]
 [ext_resource type="Texture2D" uid="uid://cm14r8jsmtr8s" path="res://assets/objects/mushroom.png" id="4_lomfy"]
-
-[sub_resource type="GDScript" id="GDScript_yh2x5"]
-script/source = "extends TextureButton
-
-@onready var dictionary_panel = get_parent().get_node(\"DictionaryPanel\")
-var dictionary_label
-
-# Example dictionary entries
-var dictionary_entries = [\"Apple: A fruit\", \"Book: A source of knowledge\"]
-
-func _ready():
-	# Initialize dictionary_label after dictionary_panel is ready
-	if dictionary_panel:
-		dictionary_label = dictionary_panel.get_node(\"DictionaryLabel\")
-		dictionary_panel.visible = false
-	else:
-		push_error(\"DictionaryPanel not found. Check node paths.\")
-
-func _pressed():
-	# Toggle the visibility of the dictionary panel
-	if dictionary_panel:
-		dictionary_panel.visible = not dictionary_panel.visible
-
-		if dictionary_panel.visible:
-			update_dictionary_text()
-
-func update_dictionary_text():
-	# Join dictionary entries into a single string
-	var text = \"Dictionary Entries:\\n\\n\"
-	text += \"\\n\".join(dictionary_entries)
-	if dictionary_label:
-		dictionary_label.text = text
-
-# Function to add new entries dynamically
-func add_new_entry(word: String, definition: String):
-	dictionary_entries.append(\"%s: %s\" % [word, definition])
-	update_dictionary_text()
-"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22rgh"]
 bg_color = Color(0.955963, 0.955963, 0.955963, 1)
@@ -79,7 +41,6 @@ texture_pressed = ExtResource("2_ffmjj")
 texture_hover = ExtResource("2_ffmjj")
 ignore_texture_size = true
 stretch_mode = 0
-script = SubResource("GDScript_yh2x5")
 
 [node name="dictionary_pannel" type="Panel" parent="Control"]
 visible = false
