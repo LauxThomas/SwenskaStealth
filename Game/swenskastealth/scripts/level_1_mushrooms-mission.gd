@@ -41,7 +41,10 @@ func _on_dialog_box_ignored():
 
 func _on_mission_trigger_body_entered(body):
 	if body.name == "Raccoon":
-		print("trigger mission")
+		dialogs = mission_dialogs
+		current_dialog_id = 0
+		emit_signal("update_dialog", dialogs[current_dialog_id])
+		emit_signal("start_dialog")
 
 func _is_mission_dialog(dictionary):
 	if "category" in dictionary:

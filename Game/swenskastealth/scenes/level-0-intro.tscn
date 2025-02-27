@@ -325,12 +325,12 @@ texture = ExtResource("10_bp63x")
 position = Vector2(334, 513)
 texture = ExtResource("11_vi15s")
 
-[connection signal="close_dialog" from="." to="Dialog" method="_on_level_0__intro_close_dialog"]
+[connection signal="close_dialog" from="." to="Dialog" method="_on_close_dialog"]
 [connection signal="show_dictionary" from="." to="Toolbar" method="_on_level_0__intro_show_dictionary"]
-[connection signal="start_dialog" from="." to="Dialog" method="_on_level_0__intro_start_dialog"]
+[connection signal="start_dialog" from="." to="Dialog" method="_on_start_dialog"]
 [connection signal="start_dialog" from="." to="Mentor" method="_on_level_0__intro_start_dialog"]
 [connection signal="start_dialog" from="." to="Raccoon" method="_on_level_0__intro_start_dialog"]
-[connection signal="update_dialog" from="." to="Dialog" method="_on_level_0_intro_update_dialog"]
+[connection signal="update_dialog" from="." to="Dialog" method="_on_update_dialog"]
 [connection signal="box_ignored" from="Dialog" to="." method="_on_dialog_box_ignored"]
 [connection signal="continue_button_pressed" from="Dialog" to="." method="_on_dialog_continue_button_pressed"]
 [connection signal="character_talking" from="Mentor" to="Dialog" method="_on_mentor_character_talking"]
