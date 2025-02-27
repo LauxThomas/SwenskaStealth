@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dpfexunplrnj0"]
+[gd_scene load_steps=18 format=3 uid="uid://dpfexunplrnj0"]
 
 [ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
@@ -20,6 +20,9 @@ height = 330.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a26bq"]
 size = Vector2(92, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24g4c"]
+size = Vector2(110, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw6mo"]
 size = Vector2(187, 121)
@@ -304,6 +307,10 @@ shape = SubResource("CapsuleShape2D_l3g7x")
 [node name="MushroomsCollision" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(1264, 600.5)
 shape = SubResource("RectangleShape2D_a26bq")
+
+[node name="SafeHouseExit" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(988, 699)
+shape = SubResource("RectangleShape2D_24g4c")
 
 [node name="MissionTrigger" type="Area2D" parent="."]
 position = Vector2(361, 494)
