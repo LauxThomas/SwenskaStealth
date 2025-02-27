@@ -82,13 +82,13 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 
-[node name="BrownMushroom" type="TextureButton" parent="Control/MushroomsCounter"]
+[node name="YellowMushroom" type="TextureButton" parent="Control/MushroomsCounter"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture_normal = ExtResource("4_lomfy")
 stretch_mode = 4
 
-[node name="BrownMushroomCounter" type="Label" parent="Control/MushroomsCounter"]
+[node name="YellowMushroomCounter" type="Label" parent="Control/MushroomsCounter"]
 layout_mode = 2
 text = "0
 "
@@ -118,3 +118,5 @@ layout_mode = 2
 text = "0
 "
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dpfexunplrnj0"]
+[gd_scene load_steps=22 format=3 uid="uid://dpfexunplrnj0"]
 
 [ext_resource type="Script" path="res://scripts/level_1_mushrooms-mission.gd" id="1_kny8f"]
 [ext_resource type="Texture2D" uid="uid://c0ebnbh4ib2q" path="res://assets/forest_background.png" id="2_4govx"]
@@ -41,7 +41,7 @@ texture = ExtResource("2_4govx")
 [node name="Dialog" parent="." instance=ExtResource("3_6chjl")]
 script = ExtResource("4_d7i01")
 
-[node name="Toolbar" parent="." instance=ExtResource("5_rxwhy")]
+[node name="Toolbar" parent="." groups=["toolbar"] instance=ExtResource("5_rxwhy")]
 script = ExtResource("6_73awq")
 
 [node name="Mentor" parent="." instance=ExtResource("7_hpbmx")]

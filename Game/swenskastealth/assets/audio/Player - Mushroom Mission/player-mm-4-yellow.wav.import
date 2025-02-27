@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d2wnvclycifjc"
-path="res://.godot/imported/player-4-yellow.wav-0edb66d6e73ac74682b5e1fb61f2d184.sample"
+path="res://.godot/imported/player-mm-4-yellow.wav-b4acab8cd6caee0e65faf1122fa8e4ef.sample"
 
 [deps]
 
-source_file="res://assets/audio/Player - Mushroom Mission/player-4-yellow.wav"
-dest_files=["res://.godot/imported/player-4-yellow.wav-0edb66d6e73ac74682b5e1fb61f2d184.sample"]
+source_file="res://assets/audio/Player - Mushroom Mission/player-mm-4-yellow.wav"
+dest_files=["res://.godot/imported/player-mm-4-yellow.wav-b4acab8cd6caee0e65faf1122fa8e4ef.sample"]
 
 [params]
 
